@@ -41,6 +41,24 @@ class Date_idea(db.Model):
     def __repr__(self):
         return f'<Date_idea idea_id={self.idea_id} date_name={self.date_name} submitted_by={self.submitted_by}>'
 
+
+class Date_liked(db.Model):
+    """Dates that have been liked"""
+
+    __tablename__ = 'dates_liked'
+
+    liked_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    idea_id = db.Column(db.Integer, db.ForeignKey('ideas.idea_id'))
+
+    user = db.relationship('User', backref='dates_liked')
+    idea = db.relationship('Date_idea', backref='dates_liked')
+
+    def __repr__(self):
+        return f'<Date_liked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
+
+
+
 def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
