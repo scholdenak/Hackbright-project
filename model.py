@@ -69,7 +69,7 @@ class Date_person(db.Model):
     user = db.relationship('User', backref='people')
 
     def __repr__(self):
-        return f'<>'
+        return f'<Date_person date_person_id={self.date_person_id} name={self.name}>'
 
 class Preference(db.Model):
 
