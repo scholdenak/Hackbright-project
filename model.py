@@ -88,7 +88,7 @@ class Preference(db.Model):
     person = db.relationship('Date_person', backref='preferences')
 
     def __repr__(self):
-        return f'<>'
+        return f'<Preference preference_id={self.preference_id} user_id={self.user_id} person_id={self.person_id}>'
 
 def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
