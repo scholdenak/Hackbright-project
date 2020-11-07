@@ -90,7 +90,7 @@ class Preference(db.Model):
     def __repr__(self):
         return f'<Preference preference_id={self.preference_id} user_id={self.user_id} person_id={self.person_id}>'
 
-def connect_to_db(flask_app, db_uri='postgresql:///ratings', echo=True):
+def connect_to_db(flask_app, db_uri='postgresql:///dates', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
