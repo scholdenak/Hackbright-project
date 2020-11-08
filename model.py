@@ -45,20 +45,20 @@ class Date_idea(db.Model):
     #     #  submitted_by={self.submitted_by}>'
 
 
-# class Date_liked(db.Model):
-#     """Dates that have been liked"""
+class Date_liked(db.Model):
+    """Dates that have been liked"""
 
-#     __tablename__ = 'dates_liked'
+    __tablename__ = 'dates_liked'
 
-#     liked_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-#     idea_id = db.Column(db.Integer, db.ForeignKey('ideas.idea_id'))
+    liked_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    idea_id = db.Column(db.Integer, db.ForeignKey('dates.idea_id'))
 
-#     user = db.relationship('User', backref='dates_liked')
-#     idea = db.relationship('Date_idea', backref='dates_liked')
+    user = db.relationship('User', backref='dates_liked')
+    idea = db.relationship('Date_idea', backref='dates_liked')
 
-#     def __repr__(self):
-#         return f'<Date_liked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
+    def __repr__(self):
+        return f'<Date_liked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
 
 # class Date_person(db.Model):
 
