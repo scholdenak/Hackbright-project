@@ -14,9 +14,17 @@ def create_user(email, password, fname, lname):
     db.session.commit()
 
     return user
+    
+def get_user_by_email(email):
+    "Return a user from their email"
+
+    return User.query.filter_by(email=email).first()
 
 def create_date_idea(date_name, description, is_video, is_socially_distant, is_co_quarantined, is_outside, is_at_home, submitted_by):
-    """creates a date idea"""
+    """creates a date idea
+    
+    >>> create_date_idea('test2', 'test2', True, True, True, True, True, 1)
+    <Date_idea idea_id=2 date_name=test2>"""
 
     date_idea = Date_idea(date_name=date_name, description=description, is_video=is_video,
     is_socially_distant=is_socially_distant, is_co_quarantined=is_co_quarantined,
