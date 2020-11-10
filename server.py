@@ -1,8 +1,8 @@
 """Server for covid date generator app."""
-
+from crud import get_user_by_email
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
-from model import connect_to_db
+from model import connect_to_db, User
 
 from jinja2 import StrictUndefined
 
@@ -13,14 +13,16 @@ app.jinja_env.undefined = StrictUndefined
 @app.route('/', methods=['GET', 'POST'])
 def login():
     """user enters email and password to move to preferences"""
-    # invalid = None
+    # error = None
     if request.method == 'POST':
-        if request.form['email'] != 'admin@admin' or request.form['password'] != 'admin':
-            flash('Invalid Credentials. Please try again.')
+        user = get_user_by_email(request.form['email'])
+        print(user, type(user))
+        if request.form['email'] != user.email or request.form['password'] != user.password:
+            error = 'Invalid Credentials. Please try again.'
         else:
             return redirect('/preferences')
     return render_template('homepage.html')
-    # , error=invalid)
+    # , error=error)
 
 @app.route('/preferences')
 def preferences():
