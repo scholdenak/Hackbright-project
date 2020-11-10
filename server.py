@@ -10,16 +10,40 @@ app = Flask(__name__)
 app.secret_key = "'dflkghnm'[pdftnhmp"
 app.jinja_env.undefined = StrictUndefined
 
-@app.route('/')
-def homepage():
-    """View homepage"""
-
-    # if user not in session:
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    """user enters email and password to move to preferences"""
+    # invalid = None
+    if request.method == 'POST':
+        if request.form['email'] != 'admin@admin' or request.form['password'] != 'admin':
+            flash('Invalid Credentials. Please try again.')
+        else:
+            return redirect('/preferences')
     return render_template('homepage.html')
+    # , error=invalid)
 
-# @app.route('/login')
+@app.route('/preferences')
+def preferences():
+    """go to references page"""
+
+    return render_template('preferences.html')
+
+# @app.route('/', methods=['GET'])
+# def homepage():
+#     """View homepage"""
+
+
+#     return redirect ('/login')
+
+# @app.route('/login', methods=['Post'])
 # def login():
-#     pass
+#     """login user"""
+#     error = None
+#     user = get_user_by_email('email')
+#     if request.form['email'] != user.email or request.form['password'] != user.password:
+#         error = "Invalid Email or Password. Please try again."
+#     else:
+#         return redirect('preferences.html')
 
 # @app.route("/login", methods=["GET"])
 # def show_login():
