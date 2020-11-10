@@ -16,11 +16,13 @@ def login():
     # error = None
     if request.method == 'POST':
         user = get_user_by_email(request.form['email'])
-        print(user, type(user))
-        if request.form['email'] != user.email or request.form['password'] != user.password:
-            error = 'Invalid Credentials. Please try again.'
+        if user == None:
+            return render_template('homepage.html')
         else:
-            return redirect('/preferences')
+            if request.form['password'] != user.password:
+                error = 'Invalid Credentials. Please try again.'
+            else:
+                return redirect('/preferences')
     return render_template('homepage.html')
     # , error=error)
 
