@@ -17,11 +17,14 @@ def login():
     if request.method == 'POST':
         user = get_user_by_email(request.form['email'])
         if user == None:
+            flash('Invalid Credentials. Please try again.')
             return render_template('homepage.html')
         else:
             if request.form['password'] != user.password:
-                error = 'Invalid Credentials. Please try again.'
+                flash('Invalid Credentials. Please try again.')
             else:
+                # flash('Login Successful')
+                session['current_user'] = user.fname
                 return redirect('/preferences')
     return render_template('homepage.html')
     # , error=error)
