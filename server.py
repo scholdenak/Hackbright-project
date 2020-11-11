@@ -53,6 +53,7 @@ def show_date_selection():
 
     return render_template('date-selection.html')
 
+# def logout
 
 if __name__ == '__main__':
     connect_to_db(app)
