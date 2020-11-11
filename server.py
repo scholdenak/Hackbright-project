@@ -30,71 +30,29 @@ def login():
     # , error=error)
 
 @app.route('/main-menu')
-def go_to_main_menu():
-    """go to references page"""
+def show_main_menu():
+    """Go to references page"""
 
     return render_template('main-menu.html')
 
-# @app.route('/', methods=['GET'])
-# def homepage():
-#     """View homepage"""
+@app.route('/dates-liked')
+def show_dates_liked():
+    """Shows all the dates the user likes"""
 
+    return render_template('dates-liked.html')
 
-#     return redirect ('/login')
+@app.route('/generate-date')
+def start_date_generator():
+    """Allows user to pick options for date"""
 
-# @app.route('/login', methods=['Post'])
-# def login():
-#     """login user"""
-#     error = None
-#     user = get_user_by_email('email')
-#     if request.form['email'] != user.email or request.form['password'] != user.password:
-#         error = "Invalid Email or Password. Please try again."
-#     else:
-#         return redirect('preferences.html')
+    return render_template('generate-date.html')
 
-# @app.route("/login", methods=["GET"])
-# def show_login():
-#     """Show login form."""
+@app.route('/date-selection')
+def show_date_selection():
+    """From users submission selects a date and shows details"""
 
-#     return render_template("login.html")
+    return render_template('date-selection.html')
 
-
-# @app.route("/login", methods=["POST"])
-# def process_login():
-#     """Log user into site.
-
-#     Find the user's login credentials located in the 'request.form'
-#     dictionary, look up the user, and store them in the session.
-#     """
-
-    # TODO: Need to implement this!
-
-    # The logic here should be something like:
-    #
-    # - get user-provided name and password from request.form
-    # - use customers.get_by_email() to retrieve corresponding Customer
-    #   object (if any)
-    # - if a Customer with that email was found, check the provided password
-    #   against the stored one
-    # - if they match, store the user's email in the session, flash a success
-    #   message and redirect the user to the "/melons" route
-    # - if they don't, flash a failure message and redirect back to "/login"
-    # - do the same if a Customer with that email doesn't exist
-
-#     return "Oops! This needs to be implemented"
-
-# @app.route('/register', methods=['POST'])
-# def register_user():
-#     email = request.form['email']
-#     password = request.form['password']
-
-#     user = get_user_by_email(email)
-#     if user:
-#         return 'A user already exists with that email.'
-#     else:
-#         create_user(email, password)
-
-#         return redirect('/login-form')
 
 if __name__ == '__main__':
     connect_to_db(app)
