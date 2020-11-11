@@ -25,15 +25,15 @@ def login():
             else:
                 # flash('Login Successful')
                 session['current_user'] = user.fname
-                return redirect('/preferences')
+                return redirect('/main-menu')
     return render_template('homepage.html')
     # , error=error)
 
-@app.route('/preferences')
-def preferences():
+@app.route('/main-menu')
+def go_to_main_menu():
     """go to references page"""
 
-    return render_template('preferences.html')
+    return render_template('main-menu.html')
 
 # @app.route('/', methods=['GET'])
 # def homepage():
