@@ -21,7 +21,7 @@ class User(db.Model):
       return f'<User user_id={self.user_id} email={self.email} fname={self.fname} lname={self.lname}>'
 
 
-class Date_idea(db.Model):
+class DateIdea(db.Model):
     """Date ideas"""
 
     __tablename__ = 'dates'
@@ -41,11 +41,11 @@ class Date_idea(db.Model):
     # user = db.relationship('User', backref='users')
 
     def __repr__(self):
-        return f'<Date_idea idea_id={self.idea_id} date_name={self.date_name}>'
+        return f'<DateIdea idea_id={self.idea_id} date_name={self.date_name}>'
     #     #  submitted_by={self.submitted_by}>'
 
 
-class Date_liked(db.Model):
+class DateLiked(db.Model):
     """Dates that have been liked"""
 
     __tablename__ = 'dates_liked'
@@ -55,10 +55,10 @@ class Date_liked(db.Model):
     idea_id = db.Column(db.Integer, db.ForeignKey('dates.idea_id'))
 
     user = db.relationship('User', backref='dates_liked')
-    idea = db.relationship('Date_idea', backref='dates_liked')
+    idea = db.relationship('DateIdea', backref='dates_liked')
 
     def __repr__(self):
-        return f'<Date_liked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
+        return f'<DateLiked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
 
 # class Date_person(db.Model):
 

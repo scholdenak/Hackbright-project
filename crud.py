@@ -1,6 +1,6 @@
 """CRUD functions"""
 
-from model import db, Date_liked, User, Date_idea,connect_to_db
+from model import db, DateLiked, User, DateIdea,connect_to_db
 
 def create_user(email, password, fname, lname):
     """creates and returns a new user
@@ -24,9 +24,9 @@ def create_date_idea(date_name, description, is_video, is_socially_distant, is_c
     """creates a date idea
     
     >>> create_date_idea('test2', 'test2', True, True, True, True, True, 1)
-    <Date_idea idea_id=2 date_name=test2>"""
+    <DateIdea idea_id=2 date_name=test2>"""
 
-    date_idea = Date_idea(date_name=date_name, description=description, is_video=is_video,
+    date_idea = DateIdea(date_name=date_name, description=description, is_video=is_video,
     is_socially_distant=is_socially_distant, is_co_quarantined=is_co_quarantined,
     is_outside=is_outside, is_at_home=is_at_home, submitted_by=submitted_by)
 
@@ -34,6 +34,10 @@ def create_date_idea(date_name, description, is_video, is_socially_distant, is_c
     db.session.commit()
 
     return date_idea
+
+def select_date():
+    pass
+    
 
 if __name__=='__main__':
     from server import app

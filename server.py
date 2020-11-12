@@ -47,10 +47,21 @@ def start_date_generator():
 
     return render_template('generate-date.html')
 
+
 @app.route('/date-selection')
 def show_date_selection():
     """From users submission selects a date and shows details"""
 
+    # ask user for input in form in html for preferences
+    # pull preferences answers from forms
+    # if preference == true
+        # select random from preference with true
+
+        # if self.attribute = form anwer and self.attribute = form answer and self.attribute = form answer:
+            # select random from date_idea class 
+            #   self.attribute = form anwer and self.attribute = form answer and self.attribute = form answer
+        # SELECT random FROM date_idea WHERE 
+        
     return render_template('date-selection.html')
 
 # def logout
