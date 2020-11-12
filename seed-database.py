@@ -26,11 +26,6 @@ for date in date_data:
                                                                                                         date['is_co_quarantined'],
                                                                                                         date['is_outside'],
                                                                                                         date['is_at_home'])
-    # for key, value in date:
-    #     if value == "true":
-    #         value = True
-    #     elif value == "false":
-    #         value = False 
     db_date = crud.create_date_idea(date_name, 
                                     description, 
                                     is_video, 
@@ -41,7 +36,17 @@ for date in date_data:
                                     submitted_by='admin')
     dates_in_db.append(db_date)
 
+with open('data/user_data.json') as u:
+    user_data = json.loads(u.read())
 
+users_in_db = []
+for user in user_data:
+    email, password, fname, lname = (user['email'],
+                                    user['password'],
+                                    user['fname'],
+                                    user['lname'])
+    db_user = crud.create_user(email, password, fname, lname)
+    users_in_db.append(db_user)
 
 # # Create 10 users; each user will make 10 ratings
 # for n in range(10):
