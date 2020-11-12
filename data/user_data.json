@@ -1,0 +1,26 @@
+[
+  {
+    "email": "user1@user1",
+    "password": "user1",
+    "fname": "User1",
+    "lname": "User1"
+  },
+  {
+    "email": "user2@user2",
+    "password": "user2",
+    "fname": "User2",
+    "lname": "User2"
+  },
+  {
+    "email": "user3@user3",
+    "password": "user3",
+    "fname": "User3",
+    "lname": "User3"
+  },
+  {
+    "email": "user4@user4",
+    "password": "user4",
+    "fname": "User4",
+    "lname": "User4"
+  }
+]
