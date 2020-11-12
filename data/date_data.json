@@ -1,146 +1,146 @@
 [
   {
-    "Date_idea": "Outdoor mini-golf",
+    "date_name": "Outdoor mini-golf",
     "description": "Go mini-golfing to an outdoor location. Bring something to wipe down your clubs and golfball and keep your distance from others.",
-    "is_video": "FALSE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "FALSE"
+    "is_video": false,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": false
   },
   {
-    "Date_idea": "Dinner Date In",
+    "date_name": "Dinner Date In",
     "description": "Order your favorite dishes for a delivery dinner date. No matter what your corona comfort zone is, this date can be tailored to you. If you are video only, order from the same restaurant or the same type of food to enjoy together. If you are socially distant, order the food and eat it at a nice outdoor area and sit distanced in the grass.",
-    "is_video": "TRUE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "FALSE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": false,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Drive In Movie Date",
+    "date_name": "Drive In Movie Date",
     "description": "Drive in movies have become popular again! Grab some of your favorite movie snacks and blankets. Search online for drive in movies in your area and grab your date and go.",
-    "is_video": "FALSE",
-    "is_socially_distant": "FALSE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "FALSE"
+    "is_video": false,
+    "is_socially_distant": false,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": false
   },
   {
-    "Date_idea": "Wine Tasting",
+    "date_name": "Wine Tasting",
     "description": "Wineries are still out there and making wine! Some locations have outdoor wine tastings available. Take in the view and enjoy trying some different wines on your date.",
-    "is_video": "FALSE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "FALSE"
+    "is_video": false,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": false
   },
   {
-    "Date_idea": "Walk Together",
+    "date_name": "Walk Together",
     "description": "Take a walk together. If you can't be in the same place, consider a video walk where you can both see the other person and their walk.",
-    "is_video": "TRUE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Dress up for a Night in",
+    "date_name": "Dress up for a Night in",
     "description": "Dress up for a fancy night in. We all have been wearing out our comfortable clothes, its time to break out the dresses and button-down shirts. Notice how nice the other person looks for you and themselves and take a few pictures together to remember this year by something other than masks.",
-    "is_video": "TRUE",
-    "is_socially_distant": "FALSE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "FALSE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": false,
+    "is_co_quarantined": true,
+    "is_outside": false,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Sunset lookout",
+    "date_name": "Sunset lookout",
     "description": "Drive to a lookout together to watch the sunset. Plan ahead and don�t miss it! If it�s a cool evening, bring a thermos with hot coco and some blankets. Enjoy intentionally spending time together",
-    "is_video": "FALSE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "FALSE"
+    "is_video": false,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": false
   },
   {
-    "Date_idea": "Dance Together",
+    "date_name": "Dance Together",
     "description": "Each pick a few songs to dance to. These can be songs from your past, goofy songs or songs of a certain style. Turn the lights down, dance individually, dance together and dance like nobody is watching!",
-    "is_video": "FALSE",
-    "is_socially_distant": "FALSE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "TRUE"
+    "is_video": false,
+    "is_socially_distant": false,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Play on online game together",
+    "date_name": "Play on online game together",
     "description": "There are lots of online games available and popular right now, play Among Us with other couples or Settlers of Catan online",
-    "is_video": "TRUE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "FALSE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": false,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Bake Together",
+    "date_name": "Bake Together",
     "description": "Find a recipe that you havent tried before and cook or bake together! You will have the added bonus of eating together after.",
-    "is_video": "TRUE",
-    "is_socially_distant": "FALSE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "FALSE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": false,
+    "is_co_quarantined": true,
+    "is_outside": false,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Binge TV Show together",
+    "date_name": "Binge TV Show together",
     "description": "Find a new show on your favorite streaming app and only plan to watch it with the other person. Sit down and get really into it. If you cant be in the same room, video call each other while watching.",
-    "is_video": "TRUE",
-    "is_socially_distant": "FALSE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "FALSE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": false,
+    "is_co_quarantined": true,
+    "is_outside": false,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Take quizzes together",
+    "date_name": "Take quizzes together",
     "description": "Do you know the other person's love languages or what their personality type is? Take an online test together to get to know the other person better!",
-    "is_video": "TRUE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Plant something together",
+    "date_name": "Plant something together",
     "description": "This one take some time to see results but is worth the energy! Stop at a local store and pick up something to plant together or order online. Make an evening out of it and enjoy each other's company while planing. After the date take care of it daily and watch it grow! Enjoy having a growing memory from your date night. If you cant be in the same place, plant twin plants and keep the rest of the process the same!",
-    "is_video": "TRUE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Have coffee/tea together",
+    "date_name": "Have coffee/tea together",
     "description": "Have coffee or tea together during the day. We used to go to coffee shops together but times have changed. Grab your favorite mug and fill it with a warm drink to sip and talk with.",
-    "is_video": "TRUE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "TRUE"
+    "is_video": true,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": true
   },
   {
-    "Date_idea": "Stop by a brewery",
+    "date_name": "Stop by a brewery",
     "description": "Go to a nearby brewery with some outdoor seating. Enjoy being in public with the safety of being outside and distant from others",
-    "is_video": "FALSE",
-    "is_socially_distant": "TRUE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "FALSE"
+    "is_video": false,
+    "is_socially_distant": true,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": false
   },
   {
-    "Date_idea": "Dine out on a Patio",
+    "date_name": "Dine out on a Patio",
     "description": "Several places have changed the way you dine-in and now you dine-out. Go to a restaurant that is serving on a patio, you might even be able to bring your dog!",
-    "is_video": "FALSE",
-    "is_socially_distant": "FALSE",
-    "is_co_quarentined": "TRUE",
-    "is_outside": "TRUE",
-    "is_at_home": "FALSE"
+    "is_video": false,
+    "is_socially_distant": false,
+    "is_co_quarantined": true,
+    "is_outside": true,
+    "is_at_home": false
   }
 ]
