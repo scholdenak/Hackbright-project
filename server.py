@@ -10,24 +10,31 @@ app = Flask(__name__)
 app.secret_key = "'dflkghnm'[pdftnhmp"
 app.jinja_env.undefined = StrictUndefined
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
+def show_homepage():
+    """Show homepage"""
+
+    return render_template('homepage.html')
+
+
+
+@app.route('/', methods=['POST'])
 def login():
     """user enters email and password to move to preferences"""
-    # error = None
-    if request.method == 'POST':
-        user = get_user_by_email(request.form['email'])
-        if user == None:
+    
+    user = get_user_by_email(request.form['email'])
+    if user == None:
+        flash('Invalid Credentials. Please try again.')
+        return render_template('homepage.html')
+
+    else:
+        if request.form['password'] != user.password:
             flash('Invalid Credentials. Please try again.')
             return render_template('homepage.html')
+        
         else:
-            if request.form['password'] != user.password:
-                flash('Invalid Credentials. Please try again.')
-            else:
-                # flash('Login Successful')
-                session['current_user'] = user.fname
-                return redirect('/main-menu')
-    return render_template('homepage.html')
-    # , error=error)
+            session['current_user'] = user.fname
+            return redirect('/main-menu') 
 
 @app.route('/main-menu')
 def show_main_menu():
@@ -35,11 +42,13 @@ def show_main_menu():
 
     return render_template('main-menu.html')
 
+# TODO
 @app.route('/dates-liked')
 def show_dates_liked():
     """Shows all the dates the user likes"""
 
     return render_template('dates-liked.html')
+
 
 @app.route('/generate-date')
 def start_date_generator():

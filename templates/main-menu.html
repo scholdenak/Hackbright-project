@@ -7,15 +7,18 @@
 <h2>Welcome {{ session['current_user'] }}</h2> 
 
 <h3>What would you like to do?</h3>
-<form>
+<!-- <form>
   <input type='submit' value='Generate a date!'>
 </form>
 
 
 <form> 
   <input type='submit' value='View your liked dates!'>
-</form>
+</form> -->
 
-
+<ul>
+  <li><a href="/generate-date">Generate a Date Idea</a></li>
+  <li><a href="/dates-liked">View Your Liked Dates</a></li>
+</ul>
 
 {% endblock %}
