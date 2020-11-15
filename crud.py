@@ -54,29 +54,38 @@ def query_date():
 
 # Approach(pseudocode):
 # function takes in the bubble answer and location answer
-def filter_date_ideas(bubble, location):
-    """queries date options with arguments of bubble and location from form"""
+# def filter_date_ideas(bubble, location):
+#     """queries date options with arguments of bubble and location from form"""
 
-# q = date idea query start
-    q = DateIdea.query
+# # q = date idea query start
+#     q = DateIdea.query
 # # form answer bubble = bubble variable
-#     bubble = request.form.get('bubble')
+#     bubble2 = request.form.get('bubble')
+
+#     # print(f'$$$$$$$$$$$$$$$$$$${bubble}$$$$$$$$$$$$$$$$$$$')
 # # form answer location = location variable
 #     location = request.form.get('location')
-# if location variable is both:
-    if location == 'both':
-#   date options = query DateIdeas WHERE ((bubble variable) = True, 
-#                                 home is True or outside is True) all
-        date_options = q.filter(DateIdea.bubble == True, 
-                                (DateIdea.location == True)).all()
-# else:
-    else:
-#   date options = query DateIdeas WHERE ((bubble variable) = True,
-#                                 (location variable) is True) all
-        date_options = q.filter(DateIdea.bubble == True, 
-                                (DateIdea.location == True)).all()
+# # if location variable is both:
 
-    return date_options
+# #     kwargs = {'hometown': 'New York', 'university' : 'USC'}
+# # User.query.filter_by(**kwargs)
+# # # This above line is equivalent to saying...
+# # User.query.filter_by(hometown='New York', university='USC')
+
+
+#     if location == 'both':
+# #   date options = query DateIdeas WHERE ((bubble variable) = True, 
+# #                                 home is True or outside is True) all
+#         date_options = q.filter_by((bubble2) == True, 
+#                                 (DateIdea.location == True)).all()
+# # else:
+#     else:
+# #   date options = query DateIdeas WHERE ((bubble variable) = True,
+# #                                 (location variable) is True) all
+#         date_options = q.filter(DateIdea.bubble == True, 
+#                                 (DateIdea.location == True)).all()
+
+#     return date_options
 
 # in server.py function
 # function to pick random out of date_options

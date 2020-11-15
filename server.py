@@ -1,8 +1,8 @@
 """Server for covid date generator app."""
-from crud import get_user_by_email, filter_date_ideas
+from crud import get_user_by_email
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
-from model import connect_to_db, User 
+from model import connect_to_db, User, DateIdea
 
 from jinja2 import StrictUndefined
 
@@ -54,22 +54,29 @@ def show_dates_liked():
 def start_date_generator():
     """Allows user to pick options for date"""
 
-    print("*****************options page***********************")
-
     return render_template('generate-date.html')
 
 
-@app.route('/generate-date/prefs')
+@app.route('/generate-date/prefs', methods=['POST'])
 def generate_preferred_date():
 
-    # # form answer bubble = bubble variable
+    # # # form answer bubble = bubble variable
     # bubble = request.args.get('bubble')
-    print(f'*****************bubble**********************')
+    # print(f'*****************{bubble}**********************')
     # # form answer location = location variable
     # location = request.args.get('location')
     # print(f'*****************{location}**********************')
 
     # date = filter_date_ideas(bubble, location)
+
+    q = DateIdea.query
+    bubble_data = request.form['bubble']
+    location_data = request.form['location']
+
+    print(f'=============={bubble_data}==================================')
+    print(f'=============={location_data}==================================')
+
+
 
     return render_template('date-selection.html')
 

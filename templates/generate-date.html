@@ -7,7 +7,7 @@
 
 <h2>Welcome {{ session['current_user'] }} to your personalized date generator</h2> 
   <div>
-  <form action="/generate-date/prefs">    
+  <form action="/generate-date/prefs" method="post">    
       Where would you like your date to be?
 
       <select name="location">
@@ -22,14 +22,14 @@
   
       How close are you comfortable being to your date?
 
-      <input type="radio" name="bubble" value="video">
+      <input type="radio" name="bubble" value="is_video">
       <label>I'm only comfortable with video dates for now.</label>
 
-      <input type="radio" name="bubble" value="socially_distant">
+      <input type="radio" name="bubble" value="is_socially_distant">
       <label>I would love to see them in person but we should stay 6ft apart.
       </label>
 
-      <input type="radio" name="bubble" value="co-quarantined">
+      <input type="radio" name="bubble" value="is_co-quarantined">
       <label>We are already co-quarantined or they are part of my corona family
         so we dont have to distance.</label>
 
