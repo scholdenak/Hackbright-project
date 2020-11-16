@@ -41,7 +41,10 @@ class DateIdea(db.Model):
     # user = db.relationship('User', backref='users')
 
     def __repr__(self):
-        return f'<DateIdea idea_id={self.idea_id} date_name={self.date_name}>'
+        return (f'<DateIdea idea_id={self.idea_id} date_name={self.date_name}' 
+        f' is_video={self.is_video} is_socially_distant={self.is_socially_distant}'
+        f' is_co_quarantined={self.is_co_quarantined} is_outside={self.is_outside}'
+        f' is_at_home={self.is_at_home}>')
     #     #  submitted_by={self.submitted_by}>'
 
 

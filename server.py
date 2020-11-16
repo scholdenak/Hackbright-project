@@ -3,7 +3,7 @@ from crud import get_user_by_email
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
 from model import connect_to_db, User, DateIdea
-
+import random
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
@@ -59,7 +59,12 @@ def start_date_generator():
 
 @app.route('/generate-date/prefs', methods=['POST'])
 def generate_preferred_date():
+    """uses form selections to query dates"""
 
+    bubble_data = request.form['bubble']
+    location_data = request.form['location']
+    q = DateIdea.query
+    
     # # # form answer bubble = bubble variable
     # bubble = request.args.get('bubble')
     # print(f'*****************{bubble}**********************')
@@ -69,14 +74,87 @@ def generate_preferred_date():
 
     # date = filter_date_ideas(bubble, location)
 
-    q = DateIdea.query
-    bubble_data = request.form['bubble']
-    location_data = request.form['location']
-
     print(f'=============={bubble_data}==================================')
     print(f'=============={location_data}==================================')
 
+    if bubble_data == "is_video":
+        if location_data == "is_outside":
 
+            bubble_date_options = q.filter(DateIdea.is_video == True, 
+                                           DateIdea.is_outside == True).all()
+            print(bubble_date_options)
+
+        if location_data == "is_at_home":
+
+            bubble_date_options = q.filter(DateIdea.is_video == True, 
+                                           DateIdea.is_at_home == True).all()
+            print(bubble_date_options)
+
+        # if location_data == 'both':
+
+    if bubble_data == "is_socially_distant":
+        if location_data == "is_outside":
+
+            bubble_date_options = q.filter(DateIdea.is_socially_distant == True, 
+                                        DateIdea.is_outside == True).all()
+            print(bubble_date_options)
+ 
+        if location_data == "is_at_home":
+
+            bubble_date_options = q.filter(DateIdea.is_socially_distant == True, 
+                                        DateIdea.is_at_home == True).all()
+            print(bubble_date_options)
+
+        # if location_data == 'both':
+
+    if bubble_data == "is_co_quarantined":
+        if location_data == "is_outside":
+
+            bubble_date_options = q.filter(DateIdea.is_co_quarantined == True, 
+                                        DateIdea.is_outside == True).all()
+            print(bubble_date_options)
+
+    # if bubble_data == "is_co_quarantined" and 
+        if location_data == "is_at_home":
+
+            bubble_date_options = q.filter(DateIdea.is_co_quarantined == True, 
+                                        DateIdea.is_at_home == True).all()
+            print(bubble_date_options)
+
+    print (random.choice(bubble_date_options))
+
+        # if location_data == 'both':
+
+    # if bubble_data == "is_video":
+
+    #     bubble_date_options = q.filter(DateIdea.is_video == True).all()
+    #     return bubble_date_options
+
+    # if bubble_data == "is_socially_distant":
+
+    #     bubble_date_options = q.filter(DateIdea.is_socially_distant == True).all()
+    #     return bubble_date_options
+
+    # if bubble_data == "is_co_quarantined":
+
+    #     bubble_date_options = q.filter(DateIdea.is_co_quarantined == True).all()
+    #     return bubble_date_options
+
+
+
+#     if location_data == 'both':
+# #   date options = query DateIdeas WHERE ((bubble variable) = True, 
+# #                                 home is True or outside is True) all
+#         date_options = q.filter_by((bubble_data) == True, 
+#                                 ((location_data) == True)).all()
+# # else:
+#     else:
+# #   date options = query DateIdeas WHERE ((bubble variable) = True,
+# #                                 (location variable) is True) all
+#         date_options = q.filter_by(DateIdea.{bubble_data} == True) 
+#                                 # ((location_data) == True)).all()
+
+    # return date_options
 
     return render_template('date-selection.html')
 
