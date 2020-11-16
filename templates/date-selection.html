@@ -9,7 +9,18 @@
 <br>
 {{ date_choice.description}}
 
-<!-- generate a different date button-->
-<!-- like date to view later -->
+<form action="/dates-liked"> 
+  Do you love this date idea? Like it to save it to your profile for later!
+  <input type="submit" name="Like This Date!" value='*'>
+  </form>
 
+<!-- generate a different date button-->
+<form action="/generate-date"> 
+<input type="submit" value="Generate a Different Date!">
+</form>
+
+<!-- like date to view later -->
+<form action="/dates-liked"> 
+<input type="submit" value="View Your Liked Dates!">
+</form>
 {% endblock %}

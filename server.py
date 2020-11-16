@@ -43,11 +43,11 @@ def show_main_menu():
     return render_template('main-menu.html')
 
 # TODO
-@app.route('/dates-liked')
-def show_dates_liked():
-    """Shows all the dates the user likes"""
+# @app.route('/dates-liked')
+# def show_dates_liked():
+#     """Shows all the dates the user likes"""
 
-    return render_template('dates-liked.html')
+#     return render_template('dates-liked.html')
 
 
 @app.route('/generate-date')
@@ -57,7 +57,13 @@ def start_date_generator():
     return render_template('generate-date.html')
 
 
-@app.route('/generate-date/prefs', methods=['POST'])
+@app.route('/date-selection')
+def show_date_selection():
+    """From users submission selects a date and shows details"""
+
+    return redirect('/date-selection')
+
+@app.route('/date-selection', methods=['POST'])
 def generate_preferred_date():
     """uses form selections to query dates"""
 
@@ -111,16 +117,13 @@ def generate_preferred_date():
     date_choice = (random.choice(date_options))
 
     # return date_options
+    return render_template ('date-selection.html', date_choice=date_choice)
 
-    return render_template('date-selection.html', date_choice=date_choice)
+@app.route('/dates-liked')
+def show_dates_liked():
 
-
-@app.route('/date-selection')
-def show_date_selection():
-    """From users submission selects a date and shows details"""
-
-    return render_template('date-selection.html')
-
+    return render_template('dates-liked.html')
+    
 # def logout
 
 if __name__ == '__main__':
