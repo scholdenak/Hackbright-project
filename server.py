@@ -67,61 +67,52 @@ def generate_preferred_date():
     
     if bubble_data == "is_video":
         if location_data == "is_outside":
-            bubble_date_options = q.filter(DateIdea.is_video == True, 
+            date_options = q.filter(DateIdea.is_video == True, 
                                            DateIdea.is_outside == True).all()
-            print(bubble_date_options)
 
         if location_data == "is_at_home":
-            bubble_date_options = q.filter(DateIdea.is_video == True, 
+            date_options = q.filter(DateIdea.is_video == True, 
                                            DateIdea.is_at_home == True).all()
-            print(bubble_date_options)
 
         if location_data == 'both':
-            bubble_date_options = q.filter(DateIdea.is_video == True, 
+            date_options = q.filter(DateIdea.is_video == True, 
                                            ((DateIdea.is_at_home == True) |
                                            (DateIdea.is_outside == True))).all()
-            print(bubble_date_options)
 
     if bubble_data == "is_socially_distant":
         if location_data == "is_outside":
-            bubble_date_options = q.filter(DateIdea.is_socially_distant == True, 
+            date_options = q.filter(DateIdea.is_socially_distant == True, 
                                         DateIdea.is_outside == True).all()
-            print(bubble_date_options)
+
  
         if location_data == "is_at_home":
-            bubble_date_options = q.filter(DateIdea.is_socially_distant == True, 
+            date_options = q.filter(DateIdea.is_socially_distant == True, 
                                         DateIdea.is_at_home == True).all()
-            print(bubble_date_options)
 
         if location_data == 'both':
-            bubble_date_options = q.filter(DateIdea.is_socially_distant == True, 
+            date_options = q.filter(DateIdea.is_socially_distant == True, 
                                            ((DateIdea.is_at_home == True) |
                                            (DateIdea.is_outside == True))).all()
-            print(bubble_date_options)
 
     if bubble_data == "is_co_quarantined":
         if location_data == "is_outside":
-            bubble_date_options = q.filter(DateIdea.is_co_quarantined == True, 
+            date_options = q.filter(DateIdea.is_co_quarantined == True, 
                                         DateIdea.is_outside == True).all()
-            print(bubble_date_options)
 
         if location_data == "is_at_home":
-            bubble_date_options = q.filter(DateIdea.is_co_quarantined == True, 
+            date_options = q.filter(DateIdea.is_co_quarantined == True, 
                                         DateIdea.is_at_home == True).all()
-            print(bubble_date_options)
-
    
         if location_data == 'both':
-            bubble_date_options = q.filter(DateIdea.is_co_quarantined == True, 
+            date_options = q.filter(DateIdea.is_co_quarantined == True, 
                                            ((DateIdea.is_at_home == True) |
                                            (DateIdea.is_outside == True))).all()
-            print(bubble_date_options)
 
-    print (random.choice(bubble_date_options))
+    date_choice = (random.choice(date_options))
 
     # return date_options
 
-    return render_template('date-selection.html')
+    return render_template('date-selection.html', date_choice=date_choice)
 
 
 @app.route('/date-selection')

@@ -4,7 +4,12 @@
 {% block title %}Dates Liked{% endblock %}
 {% block body %}
 
-<h2>Welcome {{ session['current_user'] }} to your personal date!</h2> 
+<h2> {{ session['current_user'] }}, I picked out a wonderful date for you!</h2> 
+{{ date_choice.date_name }}
+<br>
+{{ date_choice.description}}
 
+<!-- generate a different date button-->
+<!-- like date to view later -->
 
 {% endblock %}
