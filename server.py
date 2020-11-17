@@ -134,11 +134,14 @@ def show_dates_liked():
 @app.route('/save-liked-date', methods=["POST"])
 def save_liked_date():
 
-    user = session['user_id']
-    date = request.form['like']
+    user_id = session['user_id']
+    idea_id = request.form['like']
     # user = user.email
-    print(f'********************{user}***************************')
-    print(f'********************{date}***************************')
+
+    add_date_liked(user_id, idea_id)
+    
+    print(f'********************{user_id}***************************')
+    print(f'********************{idea_id}***************************')
 
     return redirect('/dates-liked')
 
