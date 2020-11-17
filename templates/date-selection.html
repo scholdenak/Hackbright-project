@@ -9,9 +9,10 @@
 <br>
 {{ date_choice.description}}
 
+<!-- add date_id and user_id to DateLiked  -->
 <form action="/dates-liked"> 
   Do you love this date idea? Like it to save it to your profile for later!
-  <input type="submit" name="Like This Date!" value='*'>
+  <input type="submit" name="Like This Date!" value='date_choice.idea_id'>
   </form>
 
 <!-- generate a different date button-->
@@ -23,4 +24,9 @@
 <form action="/dates-liked"> 
 <input type="submit" value="View Your Liked Dates!">
 </form>
+
+<!-- back to main menu -->
+<form action="/main-menu"> 
+  <input type="submit" value="Main Menu!">
+  </form>
 {% endblock %}
