@@ -1,5 +1,5 @@
 """Server for covid date generator app."""
-from crud import get_user_by_email
+from crud import get_user_by_email, add_date_liked
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
 from model import connect_to_db, User, DateIdea
@@ -34,6 +34,7 @@ def login():
         
         else:
             session['current_user'] = user.fname
+            session['user_id'] = user.user_id
             return redirect('/main-menu') 
 
 @app.route('/main-menu')
@@ -57,19 +58,24 @@ def start_date_generator():
     return render_template('generate-date.html')
 
 
+# @app.route('/date-selection')
+# def show_date_selection():
+#     """From users submission selects a date and shows details"""
+
+#     return render_template('date-selection.html')
+
+
 @app.route('/date-selection')
-def show_date_selection():
-    """From users submission selects a date and shows details"""
-
-    return redirect('/date-selection')
-
-@app.route('/date-selection', methods=['POST'])
 def generate_preferred_date():
     """uses form selections to query dates"""
 
-    bubble_data = request.form['bubble']
-    location_data = request.form['location']
+    bubble_data = request.args.get('bubble')
+    location_data = request.args.get('location')
     q = DateIdea.query
+
+    # bubble_data = request.form['bubble']
+    # location_data = request.form['location']
+    # q = DateIdea.query
     
     if bubble_data == "is_video":
         if location_data == "is_outside":
@@ -121,8 +127,25 @@ def generate_preferred_date():
 
 @app.route('/dates-liked')
 def show_dates_liked():
+    """Shows list of all dates liked"""
 
     return render_template('dates-liked.html')
+
+@app.route('/save-liked-date', methods=["POST"])
+def save_liked_date():
+
+    user = session['user_id']
+    date = request.form['like']
+    # user = user.email
+    print(f'********************{user}***************************')
+    print(f'********************{date}***************************')
+
+    return redirect('/dates-liked')
+
+
+# @app.route('/dates-liked', methods='POST')
+# def like_date_and_add():
+#     pass
     
 # def logout
 

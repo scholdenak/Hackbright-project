@@ -10,10 +10,11 @@
 {{ date_choice.description}}
 
 <!-- add date_id and user_id to DateLiked  -->
-<form action="/dates-liked"> 
+<form action="/save-liked-date", method="post"> 
   Do you love this date idea? Like it to save it to your profile for later!
-  <input type="submit" name="Like This Date!" value='date_choice.idea_id'>
-  </form>
+  <button name="like" type="submit" value='{{ date_choice }}'>Like This Date!
+  </button>
+</form>
 
 <!-- generate a different date button-->
 <form action="/generate-date"> 
