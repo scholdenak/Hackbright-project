@@ -61,7 +61,11 @@ class DateLiked(db.Model):
     idea = db.relationship('DateIdea', backref='dates_liked')
 
     def __repr__(self):
-        return f'<DateLiked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
+        return f'{self.idea.date_name}'
+        # return f'<DateLiked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
+
+
+# idea.
 
 # class Date_person(db.Model):
 

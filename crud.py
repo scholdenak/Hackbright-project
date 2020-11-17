@@ -46,11 +46,14 @@ def add_date_liked(user_id, idea_id):
 
     return liked_date
 
+    # TODO if date_id already exists, don't relike
+
 def get_user_liked_id(user_id):
     """queries for all of a user's liked_id"""
 
     return DateLiked.query.filter_by(user_id=user_id).all()
 
+# distinct
 
 # def get_date_by_id
 
