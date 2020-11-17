@@ -36,10 +36,20 @@ def create_date_idea(date_name, description, is_video, is_socially_distant, is_c
     return date_idea
 
 
+def add_date_liked(user_id, idea_id):
+    """adds a date id to the liked date table with user id"""
 
-def query_date():
-    """queries through date ideas"""
-    pass
+    liked_date = DateLiked(user_id=user_id, idea_id=idea_id)
+
+    db.session.add(liked_date)
+    db.session.commit()
+
+    return liked_date
+
+
+# def query_date():
+#     """queries through date ideas"""
+#     pass
     # DateIdea.query.filter(DateIdea.attribute == bool, 
                         #   DateIdea.attribute == bool).all()
 
@@ -92,8 +102,8 @@ def query_date():
 
     
 
-def select_date():
-    pass
+# def select_date():
+#     pass
 
 
 if __name__=='__main__':
