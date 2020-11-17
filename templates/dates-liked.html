@@ -4,5 +4,10 @@
 {% block title %}Dates Liked{% endblock %}
 {% block body %}
 
-<h2>Welcome {{ session['current_user'] }} to your liked dates!</h2> 
+<h2>Welcome {{ session['current_user'] }} to your liked dates!</h2>
+
+{% for liked_date in liked_dates %}
+<li>{{ liked_date }}</li>
+{% endfor %}
+
 {% endblock %}

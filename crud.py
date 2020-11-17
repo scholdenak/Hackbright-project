@@ -46,6 +46,13 @@ def add_date_liked(user_id, idea_id):
 
     return liked_date
 
+def get_user_liked_id(user_id):
+    """queries for all of a user's liked_id"""
+
+    return DateLiked.query.filter_by(user_id=user_id).all()
+
+
+# def get_date_by_id
 
 # def query_date():
 #     """queries through date ideas"""

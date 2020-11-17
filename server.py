@@ -1,5 +1,5 @@
 """Server for covid date generator app."""
-from crud import get_user_by_email, add_date_liked
+from crud import get_user_by_email, add_date_liked, get_user_liked_id
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
 from model import connect_to_db, User, DateIdea
@@ -129,26 +129,30 @@ def generate_preferred_date():
 def show_dates_liked():
     """Shows list of all dates liked"""
 
-    return render_template('dates-liked.html')
+    user_id = session['user_id']
+
+    liked_dates = get_user_liked_id(user_id)
+    
+
+    return render_template('dates-liked.html', liked_dates=liked_dates)
 
 @app.route('/save-liked-date', methods=["POST"])
 def save_liked_date():
+    """saves a user's liked date for their liked date page."""
 
     user_id = session['user_id']
     idea_id = request.form['like']
     # user = user.email
 
     add_date_liked(user_id, idea_id)
-    
-    print(f'********************{user_id}***************************')
-    print(f'********************{idea_id}***************************')
+
+    # print(f'********************{user_id}***************************')
+    # print(f'********************{idea_id}***************************')
 
     return redirect('/dates-liked')
 
 
-# @app.route('/dates-liked', methods='POST')
-# def like_date_and_add():
-#     pass
+
     
 # def logout
 
