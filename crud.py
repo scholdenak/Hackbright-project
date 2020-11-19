@@ -46,7 +46,6 @@ def add_date_liked(user_id, idea_id):
 
     return liked_date
 
-    # TODO if date_id already exists, don't relike
 
 def get_user_liked_id(user_id):
     """queries for all of a user's liked_id"""
@@ -54,7 +53,7 @@ def get_user_liked_id(user_id):
     return DateLiked.query.filter_by(user_id=user_id).all()
 
 
-# TODO make query to check if date already exists in user liked dates
+# TODO(NE) make query to check if date already exists in user liked dates
 # in server.py line 148 check if already in
 
 def get_date_liked(user_id, idea_id):
@@ -102,7 +101,7 @@ def get_date_liked(user_id, idea_id):
 # # # This above line is equivalent to saying...
 # # User.query.filter_by(hometown='New York', university='USC')
 
-
+# TODO refactor into server.py line 80
 #     if location == 'both':
 # #   date options = query DateIdeas WHERE ((bubble variable) = True, 
 # #                                 home is True or outside is True) all

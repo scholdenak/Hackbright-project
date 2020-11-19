@@ -43,26 +43,12 @@ def show_main_menu():
 
     return render_template('main-menu.html')
 
-# TODO
-# @app.route('/dates-liked')
-# def show_dates_liked():
-#     """Shows all the dates the user likes"""
-
-#     return render_template('dates-liked.html')
-
 
 @app.route('/generate-date')
 def start_date_generator():
     """Allows user to pick options for date"""
 
     return render_template('generate-date.html')
-
-
-# @app.route('/date-selection')
-# def show_date_selection():
-#     """From users submission selects a date and shows details"""
-
-#     return render_template('date-selection.html')
 
 
 @app.route('/date-selection')
@@ -72,10 +58,6 @@ def generate_preferred_date():
     bubble_data = request.args.get('bubble')
     location_data = request.args.get('location')
     q = DateIdea.query
-
-    # bubble_data = request.form['bubble']
-    # location_data = request.form['location']
-    # q = DateIdea.query
     
     if bubble_data == "is_video":
         if location_data == "is_outside":
@@ -122,18 +104,16 @@ def generate_preferred_date():
 
     date_choice = (random.choice(date_options))
 
-    # return date_options
     return render_template ('date-selection.html', date_choice=date_choice)
+
 
 @app.route('/dates-liked')
 def show_dates_liked():
     """Shows list of all dates liked"""
 
     user_id = session['user_id']
-
     liked_dates = get_user_liked_id(user_id)
     
-
     return render_template('dates-liked.html', liked_dates=liked_dates)
 
 
@@ -141,22 +121,11 @@ def show_dates_liked():
 def save_liked_date():
     """saves a user's liked date for their liked date page."""
 
-    
     user_id = session['user_id']
     idea_id = request.form['like']
-
-    print(f'!!!!!!!!!!!!!!!!!!{user_id}!!!!!!!!!!!!!!!!!!!!!')
-    print(f'&&&&&&&&&&&&&&&&&&&&{idea_id}&&&&&&&&&&&&&&&&&&&&&&&&')
-
-    print(f'+++++++++++{get_date_liked(user_id, idea_id)}++++++++++')
-    print(f'*************{get_user_liked_id(user_id)}*******************')
-    
+   
     current_liked = get_date_liked(user_id, idea_id)
     liked_dates = get_user_liked_id(user_id)
-
-    print(f'__________________{current_liked}____________________')
-    print(f'__________________{liked_dates}____________________')
-
 
     if current_liked in liked_dates:
         return redirect('/dates-liked')
@@ -165,26 +134,7 @@ def save_liked_date():
         add_date_liked(user_id, idea_id)
         return redirect('/dates-liked')
 
-    # for liked_date in liked_dates:
-    #     if current_liked == liked_date:
-    #         return redirect('/dates-liked')
 
-        
-    #     add_date_liked(user_id, idea_id)
-    #     return redirect('/dates-liked')
-
-    # for liked_date in liked_dates:
-    #     if liked_date == current_liked:
-
-    #         return redirect('/dates-liked')
-
-        
-    # add_date_liked(user_id, idea_id)
-    # return redirect('/dates-liked')
-
-
-
-    
 # def logout
 
 if __name__ == '__main__':
