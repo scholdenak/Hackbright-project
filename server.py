@@ -10,12 +10,12 @@ app = Flask(__name__)
 app.secret_key = "'dflkghnm'[pdftnhmp"
 app.jinja_env.undefined = StrictUndefined
 
+
 @app.route('/', methods=['GET'])
 def show_homepage():
     """Show homepage"""
 
     return render_template('homepage.html')
-
 
 
 @app.route('/', methods=['POST'])
@@ -36,6 +36,7 @@ def login():
             session['current_user'] = user.fname
             session['user_id'] = user.user_id
             return redirect('/main-menu') 
+
 
 @app.route('/main-menu')
 def show_main_menu():

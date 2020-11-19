@@ -65,40 +65,39 @@ class DateLiked(db.Model):
         return f'<DateLiked liked_id={self.liked_id} user_id={self.user_id} idea_id={self.idea_id}>'
 
 
-# idea.
+class DatePerson(db.Model):
 
-# class Date_person(db.Model):
+    __tablename__ = 'people'
 
-#     __tablename__ = 'people'
+    date_person_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    name = db.Column(db.String)
+    relationship_type = db.Column(db.String)
 
-#     date_person_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-#     name = db.Column(db.String)
-#     relationship_type = db.Column(db.String)
+    user = db.relationship('User', backref='people')
 
-#     user = db.relationship('User', backref='people')
+    def __repr__(self):
+        return f'<DatePerson date_person_id={self.date_person_id} name={self.name}>'
 
-#     def __repr__(self):
-#         return f'<Date_person date_person_id={self.date_person_id} name={self.name}>'
 
-# class Preference(db.Model):
+class Preference(db.Model):
 
-#     __tablename__ = 'preferences'
+    __tablename__ = 'preferences'
 
-#     preference_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
-#     person_id = db.Column(db.Integer, db.ForeignKey('people.person_id'))
-#     is_video = db.Column(db.Boolean)
-#     is_socially_distant = db.Column(db.Boolean)
-#     is_co_quarantined = db.Column(db.Boolean)
-#     is_outside = db.Column(db.Boolean)
-#     is_at_home = db.Column(db.Boolean)
+    preference_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'))
+    date_person_id = db.Column(db.Integer, db.ForeignKey('people.date_person_id'))
+    is_video = db.Column(db.Boolean)
+    is_socially_distant = db.Column(db.Boolean)
+    is_co_quarantined = db.Column(db.Boolean)
+    is_outside = db.Column(db.Boolean)
+    is_at_home = db.Column(db.Boolean)
 
-#     user = db.relationship('User', backref='preferences')
-#     person = db.relationship('Date_person', backref='preferences')
+    user = db.relationship('User', backref='preferences')
+    person = db.relationship('DatePerson', backref='preferences')
 
-#     def __repr__(self):
-#         return f'<Preference preference_id={self.preference_id} user_id={self.user_id} person_id={self.person_id}>'
+    def __repr__(self):
+        return f'<Preference preference_id={self.preference_id} user_id={self.user_id} date_person_id={self.date_person_id}>'
 
 def connect_to_db(flask_app, db_uri='postgresql:///corona_date', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri

@@ -2,6 +2,7 @@
 
 from model import db, DateLiked, User, DateIdea,connect_to_db
 
+
 def create_user(email, password, fname, lname):
     """creates and returns a new user
 
@@ -15,10 +16,12 @@ def create_user(email, password, fname, lname):
 
     return user
     
+
 def get_user_by_email(email):
     "Return a user from their email"
 
     return User.query.filter_by(email=email).first()
+
 
 def create_date_idea(date_name, description, is_video, is_socially_distant, is_co_quarantined, is_outside, is_at_home, submitted_by):
     """creates a date idea
