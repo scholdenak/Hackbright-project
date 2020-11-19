@@ -53,6 +53,16 @@ def get_user_liked_id(user_id):
 
     return DateLiked.query.filter_by(user_id=user_id).all()
 
+
+# TODO make query to check if date already exists in user liked dates
+# in server.py line 148 check if already in
+
+def get_date_liked(user_id, idea_id):
+    """gets the date liked by the user id and the date id"""
+
+    return DateLiked.query.filter(DateLiked.user_id==user_id,
+                             DateLiked.idea_id==idea_id).first()
+
 # distinct
 
 # def get_date_by_id

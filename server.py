@@ -1,8 +1,8 @@
 """Server for covid date generator app."""
-from crud import get_user_by_email, add_date_liked, get_user_liked_id
+from crud import get_user_by_email, add_date_liked, get_user_liked_id, get_date_liked
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
-from model import connect_to_db, User, DateIdea
+from model import connect_to_db, User, DateIdea, DateLiked
 import random
 from jinja2 import StrictUndefined
 
@@ -136,20 +136,51 @@ def show_dates_liked():
 
     return render_template('dates-liked.html', liked_dates=liked_dates)
 
+
 @app.route('/save-liked-date', methods=["POST"])
 def save_liked_date():
     """saves a user's liked date for their liked date page."""
 
+    
     user_id = session['user_id']
     idea_id = request.form['like']
-    # user = user.email
 
-    add_date_liked(user_id, idea_id)
+    print(f'!!!!!!!!!!!!!!!!!!{user_id}!!!!!!!!!!!!!!!!!!!!!')
+    print(f'&&&&&&&&&&&&&&&&&&&&{idea_id}&&&&&&&&&&&&&&&&&&&&&&&&')
 
-    # print(f'********************{user_id}***************************')
-    # print(f'********************{idea_id}***************************')
+    print(f'+++++++++++{get_date_liked(user_id, idea_id)}++++++++++')
+    print(f'*************{get_user_liked_id(user_id)}*******************')
+    
+    current_liked = get_date_liked(user_id, idea_id)
+    liked_dates = get_user_liked_id(user_id)
 
-    return redirect('/dates-liked')
+    print(f'__________________{current_liked}____________________')
+    print(f'__________________{liked_dates}____________________')
+
+
+    if current_liked in liked_dates:
+        return redirect('/dates-liked')
+
+    else:
+        add_date_liked(user_id, idea_id)
+        return redirect('/dates-liked')
+
+    # for liked_date in liked_dates:
+    #     if current_liked == liked_date:
+    #         return redirect('/dates-liked')
+
+        
+    #     add_date_liked(user_id, idea_id)
+    #     return redirect('/dates-liked')
+
+    # for liked_date in liked_dates:
+    #     if liked_date == current_liked:
+
+    #         return redirect('/dates-liked')
+
+        
+    # add_date_liked(user_id, idea_id)
+    # return redirect('/dates-liked')
 
 
 
