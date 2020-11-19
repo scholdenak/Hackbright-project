@@ -107,6 +107,26 @@ def generate_preferred_date():
 
     return render_template ('date-selection.html', date_choice=date_choice)
 
+# #     kwargs = {'hometown': 'New York', 'university' : 'USC'}
+# # User.query.filter_by(**kwargs)
+# # # This above line is equivalent to saying...
+# # User.query.filter_by(hometown='New York', university='USC')
+
+# TODO refactor into server.py line 80
+#     if location == 'both':
+# #   date options = query DateIdeas WHERE ((bubble variable) = True, 
+# #                                 home is True or outside is True) all
+#         date_options = q.filter_by((bubble2) == True, 
+#                                 (DateIdea.location == True)).all()
+# # else:
+#     else:
+# #   date options = query DateIdeas WHERE ((bubble variable) = True,
+# #                                 (location variable) is True) all
+#         date_options = q.filter(DateIdea.bubble == True, 
+#                                 (DateIdea.location == True)).all()
+
+#     return date_options
+
 
 @app.route('/dates-liked')
 def show_dates_liked():

@@ -65,6 +65,9 @@ def get_date_liked(user_id, idea_id):
     return DateLiked.query.filter(DateLiked.user_id==user_id,
                              DateLiked.idea_id==idea_id).first()
 
+
+
+
 # distinct
 
 # def get_date_by_id
