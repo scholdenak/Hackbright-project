@@ -1,5 +1,5 @@
 """Server for covid date generator app."""
-from crud import get_user_by_email, add_date_liked, get_user_liked_id, get_date_liked
+from crud import get_user_by_email, add_date_liked, get_user_liked_id, get_date_liked, create_date_person
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
 from model import connect_to_db, User, DateIdea, DateLiked
@@ -158,7 +158,26 @@ def save_liked_date():
 
 @app.route('/date-people')
 def render_date_people():
+    """Renders page with all saved date people as well as 
+    option to create new person"""
+
+    #TODO add date people from people table so a person can
+    # click each one for a date option
+
     return render_template('date-people.html')
+
+
+@app.route('/create-person-pref')
+def create_new_person_and_prefs():
+    """creates a new person with their preferences"""
+
+    user_id = session['user_id']
+    name = request.args.get('name')
+    relationship_type = request.args.get('relationship')
+    create_date_person(user_id, name, relationship_type)
+
+    return render_template('/date-selection')
+
 # def logout
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
 """CRUD functions"""
 
-from model import db, DateLiked, User, DateIdea,connect_to_db, DatePerson
+from model import db, DateLiked, User, DateIdea,connect_to_db, DatePerson, Preference
 
 
 def create_user(email, password, fname, lname):
@@ -75,6 +75,22 @@ def create_date_person(user_id, name, relationship_type):
     db.session.commit()
 
     return date_person
+
+def create_person_preferences(user_id, date_person_id,
+                            is_video, is_socially_distant,
+                            is_co_quarantined, is_outside,
+                            is_at_home):
+
+
+    person_prefs = Preference(user_id=user_id, date_person_id=date_person_id,
+                            is_video=is_video, is_socially_distant=is_socially_distant,
+                            is_co_quarantined=is_co_quarantined, is_outside=is_outside,
+                            is_at_home=is_at_home)
+
+    db.session.add(person_prefs)
+    db.session.commit()
+
+    return person_prefs
 
 # distinct
 
