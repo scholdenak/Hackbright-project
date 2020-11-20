@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Corona Safe Date {% endblock %}
+{% block body %}
+  <h1>Corona Safe Date Generator</h1>
+
+  <div>You can have romantic dates or friend dates.
+    We just want you to be able to see them and still feel as safe as possible.
+  </div>
+  <div>Click a person to generate a date with their preferences
+    or create a new person below!
+  
+    <form action="/create-person-pref">
+      <input type="submit" name="new-person" value="New Relationship!">
+      
+    </form>
+  </div>
+
+
+
+{% endblock %}

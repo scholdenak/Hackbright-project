@@ -5,6 +5,7 @@ from flask import (Flask, render_template, request, flash, session,
 from model import connect_to_db, User, DateIdea, DateLiked
 import random
 from jinja2 import StrictUndefined
+# import secrets
 
 app = Flask(__name__)
 app.secret_key = "'dflkghnm'[pdftnhmp"
@@ -167,15 +168,24 @@ def render_date_people():
     return render_template('date-people.html')
 
 
-@app.route('/create-person-pref')
+@app.route('/create-person-pref', methods=['POST'])
 def create_new_person_and_prefs():
     """creates a new person with their preferences"""
 
     user_id = session['user_id']
     name = request.args.get('name')
     relationship_type = request.args.get('relationship')
+    
     create_date_person(user_id, name, relationship_type)
 
+    # bubble_data = request.args.get('bubble')
+    # location_data = request.args.get('location')
+
+    # create_person_preferences(user_id, date_person_id,
+    #                         is_video, is_socially_distant,
+    #                         is_co_quarantined, is_outside,
+    #                         is_at_home)
+    
     return render_template('/date-selection')
 
 # def logout
