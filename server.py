@@ -156,6 +156,9 @@ def save_liked_date():
         return redirect('/dates-liked')
 
 
+@app.route('/date-people')
+def render_date_people():
+    return render_template('date-people.html')
 # def logout
 
 if __name__ == '__main__':

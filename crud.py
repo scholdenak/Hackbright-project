@@ -1,6 +1,6 @@
 """CRUD functions"""
 
-from model import db, DateLiked, User, DateIdea,connect_to_db
+from model import db, DateLiked, User, DateIdea,connect_to_db, DatePerson
 
 
 def create_user(email, password, fname, lname):
@@ -66,7 +66,15 @@ def get_date_liked(user_id, idea_id):
                              DateLiked.idea_id==idea_id).first()
 
 
+def create_date_person(user_id, name, relationship_type):
+    """Adds a date person that user will be going on date with"""
 
+    date_person = DatePerson(user_id=user_id, name=name, relationship_type=relationship_type)
+
+    db.session.add(date_person)
+    db.session.commit()
+
+    return date_person
 
 # distinct
 
