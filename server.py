@@ -1,5 +1,6 @@
 """Server for covid date generator app."""
-from crud import get_user_by_email, add_date_liked, get_user_liked_id, get_date_liked, create_date_person
+from crud import (get_user_by_email, add_date_liked, get_user_liked_id, 
+                get_date_liked, create_date_person, get_date_people_by_user_id)
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
 from model import connect_to_db, User, DateIdea, DateLiked
@@ -162,10 +163,13 @@ def render_date_people():
     """Renders page with all saved date people as well as 
     option to create new person"""
 
+    user_id = session['user_id']
+    date_people = get_date_people_by_user_id(user_id)
+
     #TODO add date people from people table so a person can
     # click each one for a date option
 
-    return render_template('date-people.html')
+    return render_template('date-people.html', date_people=date_people)
 
 
 @app.route('/create-person-pref')
@@ -180,18 +184,18 @@ def create_new_person_and_prefs():
     """creates a new person with their preferences"""
 
     user_id = session['user_id']
-    name = request.args.get('name')
-    relationship_type = request.args.get('relationship')
+    name = request.form['name']
+    relationship_type = request.form['relationship']
     
     create_date_person(user_id, name, relationship_type)
 
-    # bubble_data = request.args.get('bubble')
-    # location_data = request.args.get('location')
+    bubble_data = request.args.get('bubble')
+    location_data = request.args.get('location')
 
-    # create_person_preferences(user_id, date_person_id,
-    #                         is_video, is_socially_distant,
-    #                         is_co_quarantined, is_outside,
-    #                         is_at_home)
+    create_person_preferences(user_id, date_person_id,
+                            is_video, is_socially_distant,
+                            is_co_quarantined, is_outside,
+                            is_at_home)
     
     return redirect('/date-people')
 

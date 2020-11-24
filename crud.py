@@ -80,7 +80,7 @@ def create_person_preferences(user_id, date_person_id,
                             is_video, is_socially_distant,
                             is_co_quarantined, is_outside,
                             is_at_home):
-
+    """adds preferences to table connected to user_id and date_person_id"""
 
     person_prefs = Preference(user_id=user_id, date_person_id=date_person_id,
                             is_video=is_video, is_socially_distant=is_socially_distant,
@@ -92,7 +92,12 @@ def create_person_preferences(user_id, date_person_id,
 
     return person_prefs
 
-# distinct
+
+def get_date_people_by_user_id(user_id):
+    """queries all date people by the user_id"""
+
+    return DatePerson.query.filter(DatePerson.user_id==user_id).all()
+
 
 # def get_date_by_id
 
