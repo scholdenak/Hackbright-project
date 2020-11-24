@@ -168,6 +168,13 @@ def render_date_people():
     return render_template('date-people.html')
 
 
+@app.route('/create-person-pref')
+def show_date_person_form():
+    """renders template to create new date person"""
+
+    return render_template('create-person-pref.html')
+
+
 @app.route('/create-person-pref', methods=['POST'])
 def create_new_person_and_prefs():
     """creates a new person with their preferences"""
@@ -186,7 +193,7 @@ def create_new_person_and_prefs():
     #                         is_co_quarantined, is_outside,
     #                         is_at_home)
     
-    return render_template('/date-selection')
+    return redirect('/date-people')
 
 # def logout
 
