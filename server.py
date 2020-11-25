@@ -1,6 +1,7 @@
 """Server for covid date generator app."""
 from crud import (get_user_by_email, add_date_liked, get_user_liked_id, 
-                get_date_liked, create_date_person, get_date_people_by_user_id)
+                get_date_liked, create_date_person, get_date_people_by_user_id,
+                create_person_preferences, get_date_person_id)
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
 from model import connect_to_db, User, DateIdea, DateLiked
@@ -179,25 +180,69 @@ def show_date_person_form():
     return render_template('create-person-pref.html')
 
 
-@app.route('/create-person-pref', methods=['POST'])
-def create_new_person_and_prefs():
+@app.route('/create-person', methods=['POST'])
+def create_new_person():
     """creates a new person with their preferences"""
 
     user_id = session['user_id']
     name = request.form['name']
     relationship_type = request.form['relationship']
-    
-    create_date_person(user_id, name, relationship_type)
 
-    bubble_data = request.args.get('bubble')
-    location_data = request.args.get('location')
+
+    date_person = create_date_person(user_id, name, relationship_type)
+    print(f'\n\n******{date_person}***{date_person.date_person_id}****')
+
+
+    bubble_data = request.form['bubble']
+    location_data = request.form['location']
+    date_person_id = get_date_person_id(user_id, name)
+
+
+    is_video = bubble_data == 'is_video'
+    is_socially_distant = bubble_data == 'is_socially_distant'
+    is_co_quarantined = bubble_data == 'is_co_quarantined'
+    is_outside = location_data == 'is_outside'
+    is_at_home = location_data == 'is_at_home'
+
+    print(f'is_video={is_video} is_socially_distant={is_socially_distant} \
+    is_co_quarantined={is_co_quarantined} is_outside={is_outside} is_at_home={is_at_home}')
+    # if 
+
+    # if location == 'both':
+    #     is_outside = True
+    #     is_at_home = True
+    # if location == 'is_at_home':
+    #     is_at_home = True
+    # if location == 'is_outside':
+    #     is_outside = True
 
     create_person_preferences(user_id, date_person_id,
-                            is_video, is_socially_distant,
-                            is_co_quarantined, is_outside,
-                            is_at_home)
+                            is_video=is_video, is_socially_distant=is_socially_distant,
+                            is_co_quarantined=is_co_quarantined, is_outside=is_outside,
+                            is_at_home=is_at_home)
     
-    return redirect('/date-people')
+
+    return redirect ('/date-people')
+    # return redirect(f'/create-pref/?name={name}&')
+
+
+@app.route('/create-pref/', methods=['POST'])
+def create_new_person_and_prefs():
+
+    
+    user_id = session['user_id']
+    # name = request.form['name']
+
+    date_person_id = get_date_person_id(user_id, name)
+
+    # is_video=False 
+    # is_socially_distant=False
+    # is_co_quarantined=False
+    # is_outside=False
+    # is_at_home=False
+    print(f'******************{is_at_home}************************')
+
+
 
 # def logout
 
