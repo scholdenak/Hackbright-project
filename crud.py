@@ -105,7 +105,14 @@ def get_date_person_id(user_id, name):
     return DatePerson.query.filter(DatePerson.user_id==user_id,
                              DatePerson.name==name).first().date_person_id
 
-# def get_date_by_id
+
+def generate_from_person_id(date_person_id):
+    """generates a new date from person_id preferences"""
+
+    person_prefs = Preference.query.filter(Preference.date_person_id==date_person_id).first()
+    # person_prefs.attribute == 
+
+    print(person_prefs)
 
 # def query_date():
 #     """queries through date ideas"""

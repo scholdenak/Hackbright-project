@@ -210,16 +210,7 @@ def create_new_person():
 
     print(f'is_video={is_video} is_socially_distant={is_socially_distant} \
     is_co_quarantined={is_co_quarantined} is_outside={is_outside} is_at_home={is_at_home}')
-    # if 
-
-    # if location == 'both':
-    #     is_outside = True
-    #     is_at_home = True
-    # if location == 'is_at_home':
-    #     is_at_home = True
-    # if location == 'is_outside':
-    #     is_outside = True
-
+ 
     create_person_preferences(user_id, date_person_id,
                             is_video=is_video, is_socially_distant=is_socially_distant,
                             is_co_quarantined=is_co_quarantined, is_outside=is_outside,
@@ -227,24 +218,26 @@ def create_new_person():
     
 
     return redirect ('/date-people')
-    # return redirect(f'/create-pref/?name={name}&')
 
 
-@app.route('/create-pref/', methods=['POST'])
-def create_new_person_and_prefs():
+# @app.route ()
+    
+
+# @app.route('/create-pref/', methods=['POST'])
+# def create_new_person_and_prefs():
 
     
-    user_id = session['user_id']
-    # name = request.form['name']
+#     user_id = session['user_id']
+#     # name = request.form['name']
 
-    date_person_id = get_date_person_id(user_id, name)
+#     date_person_id = get_date_person_id(user_id, name)
 
-    # is_video=False 
-    # is_socially_distant=False
-    # is_co_quarantined=False
-    # is_outside=False
-    # is_at_home=False
-    print(f'******************{is_at_home}************************')
+#     # is_video=False 
+#     # is_socially_distant=False
+#     # is_co_quarantined=False
+#     # is_outside=False
+#     # is_at_home=False
+#     print(f'******************{is_at_home}************************')
 
 
 
