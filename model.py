@@ -97,7 +97,11 @@ class Preference(db.Model):
     person = db.relationship('DatePerson', backref='preferences')
 
     def __repr__(self):
-        return f'<Preference preference_id={self.preference_id} user_id={self.user_id} date_person_id={self.date_person_id}>'
+        return f'\n\n <Preference preference_id={self.preference_id} user_id={self.user_id} \
+            date_person_id={self.date_person_id} is_video={self.is_video} \
+            is_socially_distant={self.is_socially_distant} \
+            is_co_quarantined={self.is_co_quarantined} \
+            is_outside={self.is_outside} is_at_home={self.is_at_home}>'
 
 def connect_to_db(flask_app, db_uri='postgresql:///corona_date', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
