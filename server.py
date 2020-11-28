@@ -204,6 +204,10 @@ def create_new_person():
     is_outside = location_data == 'is_outside'
     is_at_home = location_data == 'is_at_home'
 
+    if location_data == 'both':
+        is_outside = True
+        is_at_home = True
+
     print(f'is_video={is_video} is_socially_distant={is_socially_distant} \
     is_co_quarantined={is_co_quarantined} is_outside={is_outside} is_at_home={is_at_home}')
     # if 
