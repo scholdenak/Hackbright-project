@@ -1,7 +1,7 @@
 """Server for covid date generator app."""
 from crud import (get_user_by_email, add_date_liked, get_user_liked_id, 
                 get_date_liked, create_date_person, get_date_people_by_user_id,
-                create_person_preferences, get_date_person_id)
+                create_person_preferences, get_date_person_id, generate_from_person_id)
 from flask import (Flask, render_template, request, flash, session,
                    redirect, url_for)
 from model import connect_to_db, User, DateIdea, DateLiked
@@ -220,40 +220,21 @@ def create_new_person():
     return redirect ('/date-people')
 
 
-# TODO current issue is searching will all attributes
-# @app.route('/date-selection')
-# def generate_preferred_date():
-#     """uses form selections to query dates"""
+@app.route('/generate/name')
+def generate_date_from_name():
+    """generates a date from the date person's name by finding id then 
+    preferences"""
 
+    user_id = session['user_id']
+    name = request.args.get('name')
     # bubble_data = request.args.get('bubble')
-    # print(f'\n\n {bubble_data}')
-    # location_data = request.args.get('location')
-    # print(f'\n\n {location_data}')
-    # q = DateIdea.query
+    date_person_id = get_date_person_id(user_id, name)
 
-#     is_video = bubble_data == 'is_video'
-#     is_socially_distant = bubble_data == 'is_socially_distant'
-#     is_co_quarantined = bubble_data == 'is_co_quarantined'
+    date_options = generate_from_person_id(date_person_id)
 
-#     is_outside = location_data == 'is_outside'
-#     is_at_home = location_data == 'is_at_home'
+    date_choice = random.choice(date_options)
 
-    # date_options = q.filter(DateIdea.location_data == True).all()
-#     # , DateIdea.is_socially_distant == is_socially_distant,
-#     # DateIdea.is_co_quarantined == is_co_quarantined).all() 
-
-    # print(f'\n\n {date_options}')
-    
-    # DateIdea.is_at_home == is_at_home, 
-    # DateIdea.is_outside == is_outside).all()
-
-    # date_options = q.filter(DateIdea.is_video == is_video, DateIdea.is_socially_distant == is_socially_distant,
-    # DateIdea.is_co_quarantined == is_co_quarantined, DateIdea.is_at_home == is_at_home, 
-    # DateIdea.is_outside == is_outside).all()
-
-    # date_choice = (random.choice(date_options))
-
-    # return render_template ('date-selection.html', date_choice=date_choice)
+    return render_template ('date-selection.html', date_choice=date_choice)
 
 
 if __name__ == '__main__':

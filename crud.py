@@ -134,13 +134,13 @@ def generate_from_person_id(date_person_id):
     
     q = DateIdea.query
 
-    date_options = q.filter(bubble,location).all()
+    return q.filter(bubble,location).all()
 
     # date_options = q.filter(DateIdea.is_video == is_video, DateIdea.is_socially_distant == is_socially_distant,
     # DateIdea.is_co_quarantined == is_co_quarantined, DateIdea.is_at_home == is_at_home, 
     # DateIdea.is_outside == is_outside).all()
 
-    return date_options
+
 
 
 
