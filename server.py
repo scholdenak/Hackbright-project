@@ -54,7 +54,7 @@ def start_date_generator():
 
     return render_template('generate-date.html')
 
-
+# *****************************************************
 @app.route('/date-selection')
 def generate_preferred_date():
     """uses form selections to query dates"""
@@ -109,7 +109,7 @@ def generate_preferred_date():
     date_choice = (random.choice(date_options))
 
     return render_template ('date-selection.html', date_choice=date_choice)
-
+# # ******************************************
 # #     kwargs = {'hometown': 'New York', 'university' : 'USC'}
 # # User.query.filter_by(**kwargs)
 # # # This above line is equivalent to saying...
@@ -220,28 +220,41 @@ def create_new_person():
     return redirect ('/date-people')
 
 
-# @app.route ()
+# TODO current issue is searching will all attributes
+# @app.route('/date-selection')
+# def generate_preferred_date():
+#     """uses form selections to query dates"""
+
+    # bubble_data = request.args.get('bubble')
+    # print(f'\n\n {bubble_data}')
+    # location_data = request.args.get('location')
+    # print(f'\n\n {location_data}')
+    # q = DateIdea.query
+
+#     is_video = bubble_data == 'is_video'
+#     is_socially_distant = bubble_data == 'is_socially_distant'
+#     is_co_quarantined = bubble_data == 'is_co_quarantined'
+
+#     is_outside = location_data == 'is_outside'
+#     is_at_home = location_data == 'is_at_home'
+
+    # date_options = q.filter(DateIdea.location_data == True).all()
+#     # , DateIdea.is_socially_distant == is_socially_distant,
+#     # DateIdea.is_co_quarantined == is_co_quarantined).all() 
+
+    # print(f'\n\n {date_options}')
     
+    # DateIdea.is_at_home == is_at_home, 
+    # DateIdea.is_outside == is_outside).all()
 
-# @app.route('/create-pref/', methods=['POST'])
-# def create_new_person_and_prefs():
+    # date_options = q.filter(DateIdea.is_video == is_video, DateIdea.is_socially_distant == is_socially_distant,
+    # DateIdea.is_co_quarantined == is_co_quarantined, DateIdea.is_at_home == is_at_home, 
+    # DateIdea.is_outside == is_outside).all()
 
-    
-#     user_id = session['user_id']
-#     # name = request.form['name']
+    # date_choice = (random.choice(date_options))
 
-#     date_person_id = get_date_person_id(user_id, name)
+    # return render_template ('date-selection.html', date_choice=date_choice)
 
-#     # is_video=False 
-#     # is_socially_distant=False
-#     # is_co_quarantined=False
-#     # is_outside=False
-#     # is_at_home=False
-#     print(f'******************{is_at_home}************************')
-
-
-
-# def logout
 
 if __name__ == '__main__':
     connect_to_db(app)
