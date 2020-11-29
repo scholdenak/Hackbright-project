@@ -140,7 +140,7 @@ def generate_from_person_id(date_person_id):
     # DateIdea.is_co_quarantined == is_co_quarantined, DateIdea.is_at_home == is_at_home, 
     # DateIdea.is_outside == is_outside).all()
 
-    print(f'\n\n{date_options}')
+    return date_options
 
 
 
