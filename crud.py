@@ -110,67 +110,40 @@ def generate_from_person_id(date_person_id):
     """generates a new date from person_id preferences"""
 
     person_prefs = Preference.query.filter(Preference.date_person_id==date_person_id).first()
+   
     # person_prefs.attribute == 
+    print(f'\n\n{person_prefs}')
 
-    print(person_prefs)
+    if person_prefs.is_video == True:
+        bubble = (DateIdea.is_video == True)
 
-# def query_date():
-#     """queries through date ideas"""
-#     pass
-    # DateIdea.query.filter(DateIdea.attribute == bool, 
-                        #   DateIdea.attribute == bool).all()
+    if person_prefs.is_socially_distant == True:
+        bubble = (DateIdea.is_socially_distant == True)
 
-# Take in two attributes at True => all date ideas with those attributes
+    if person_prefs.is_co_quarantined == True:
+        bubble = (DateIdea.is_co_quarantined == True)
 
-# examples:
-# arguments(is_video=True, is_outside=True)
-# output(return all with True is video and True is outside)
+    if person_prefs.is_outside == True and person_prefs.is_at_home == False:
+        location = (DateIdea.is_outside == True)
 
-# arguments(is_video=True, both=True (is_outside=True or is_at_home=True))
-# output(return all with True is video and either outside or home is true)
+    if person_prefs.is_at_home == True and person_prefs.is_outside == False:
+        location = (DateIdea.is_at_home == True)
 
-# Approach(pseudocode):
-# function takes in the bubble answer and location answer
-# def filter_date_ideas(bubble, location):
-#     """queries date options with arguments of bubble and location from form"""
-
-# # q = date idea query start
-#     q = DateIdea.query
-# # form answer bubble = bubble variable
-#     bubble2 = request.form.get('bubble')
-
-#     # print(f'$$$$$$$$$$$$$$$$$$${bubble}$$$$$$$$$$$$$$$$$$$')
-# # form answer location = location variable
-#     location = request.form.get('location')
-# # if location variable is both:
-
-# #     kwargs = {'hometown': 'New York', 'university' : 'USC'}
-# # User.query.filter_by(**kwargs)
-# # # This above line is equivalent to saying...
-# # User.query.filter_by(hometown='New York', university='USC')
-
-# TODO refactor into server.py line 80
-#     if location == 'both':
-# #   date options = query DateIdeas WHERE ((bubble variable) = True, 
-# #                                 home is True or outside is True) all
-#         date_options = q.filter_by((bubble2) == True, 
-#                                 (DateIdea.location == True)).all()
-# # else:
-#     else:
-# #   date options = query DateIdeas WHERE ((bubble variable) = True,
-# #                                 (location variable) is True) all
-#         date_options = q.filter(DateIdea.bubble == True, 
-#                                 (DateIdea.location == True)).all()
-
-#     return date_options
-
-# in server.py function
-# function to pick random out of date_options
-
+    if person_prefs.is_at_home == True and person_prefs.is_outside == True:
+        location = ((DateIdea.is_at_home == True) | (DateIdea.is_outside == True))
     
+    q = DateIdea.query
 
-# def select_date():
-#     pass
+    date_options = q.filter(bubble).all()
+
+    # date_options = q.filter(DateIdea.is_video == is_video, DateIdea.is_socially_distant == is_socially_distant,
+    # DateIdea.is_co_quarantined == is_co_quarantined, DateIdea.is_at_home == is_at_home, 
+    # DateIdea.is_outside == is_outside).all()
+
+    print(f'\n\n{date_options}')
+
+
+
 
 
 if __name__=='__main__':
