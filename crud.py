@@ -23,7 +23,7 @@ def get_user_by_email(email):
     return User.query.filter_by(email=email).first()
 
 
-def create_date_idea(date_name, description, is_video, is_socially_distant, is_co_quarantined, is_outside, is_at_home, submitted_by):
+def create_date_idea(date_name, description, is_video, is_socially_distant, is_co_quarantined, is_outside, is_at_home, picture, submitted_by):
     """creates a date idea
     
     >>> create_date_idea('test2', 'test2', True, True, True, True, True, 1)
@@ -31,7 +31,7 @@ def create_date_idea(date_name, description, is_video, is_socially_distant, is_c
 
     date_idea = DateIdea(date_name=date_name, description=description, is_video=is_video,
     is_socially_distant=is_socially_distant, is_co_quarantined=is_co_quarantined,
-    is_outside=is_outside, is_at_home=is_at_home, submitted_by=submitted_by)
+    is_outside=is_outside, is_at_home=is_at_home, picture=picture, submitted_by=submitted_by)
 
     db.session.add(date_idea)
     db.session.commit()

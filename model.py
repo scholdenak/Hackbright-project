@@ -34,6 +34,7 @@ class DateIdea(db.Model):
     is_co_quarantined = db.Column(db.Boolean)
     is_outside = db.Column(db.Boolean)
     is_at_home = db.Column(db.Boolean)
+    picture = db.Column(db.String)
     submitted_by = db.Column(db.String)
     
     #  db.ForeignKey('users.user_id'))
@@ -103,7 +104,7 @@ class Preference(db.Model):
             is_co_quarantined={self.is_co_quarantined} \
             is_outside={self.is_outside} is_at_home={self.is_at_home}>'
 
-def connect_to_db(flask_app, db_uri='postgresql:///corona_date', echo=True):
+def connect_to_db(flask_app, db_uri='postgresql:///corona_dates', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
