@@ -109,6 +109,13 @@ def generate_preferred_date():
     date_choice = (random.choice(date_options))
 
     return render_template ('date-selection.html', date_choice=date_choice)
+
+@app.route('/map')
+def render_map():
+
+    return render_template('map.html')
+
+    
 # # ******************************************
 # #     kwargs = {'hometown': 'New York', 'university' : 'USC'}
 # # User.query.filter_by(**kwargs)
