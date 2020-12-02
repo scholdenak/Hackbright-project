@@ -9,9 +9,9 @@
 <br>
 {{ date_choice.description}}
 <br>
-{{ date_choice.picture }}
+<img id=dateImage src = "{{ date_choice.picture }}">
 
-<!-- add date_id and user_id to DateLiked  -->
+
 <form action="/save-liked-date", method="post"> 
   Do you love this date idea? Like it to save it to your profile for later!
   <button name="like" type="submit" value='{{ date_choice.idea_id }}'>Like This Date!

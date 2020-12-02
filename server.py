@@ -110,12 +110,9 @@ def generate_preferred_date():
 
     return render_template ('date-selection.html', date_choice=date_choice)
 
-@app.route('/map')
-def render_map():
 
-    return render_template('map.html')
 
-    
+
 # # ******************************************
 # #     kwargs = {'hometown': 'New York', 'university' : 'USC'}
 # # User.query.filter_by(**kwargs)
@@ -242,6 +239,17 @@ def generate_date_from_name():
     date_choice = random.choice(date_options)
 
     return render_template ('date-selection.html', date_choice=date_choice)
+
+
+@app.route('/map')
+def render_map():
+
+    return render_template('map.html')
+
+
+# @app.route('/map.json')
+# def search_info():
+#     """uses search info from map.html to generate json"""
 
 
 if __name__ == '__main__':
