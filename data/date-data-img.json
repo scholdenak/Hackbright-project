@@ -1,33 +1,33 @@
 [
   {
     "date_name": "Outdoor mini-golf",
-    "description": "Go mini-golfing to an outdoor location. Bring something to wipe down your clubs and golfball and keep your distance from others.",
+    "description": "Go mini-golfing to an outdoor location. Bring something to wipe down your clubs and golfballs and keep your distance from others.",
     "is_video": false,
     "is_socially_distant": true,
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": false,
-    "picture": "https://thumbs.dreamstime.com/b/two-mini-golf-putters-three-balls-two-mini-golf-putter-three-colorful-golf-balls-synthetic-grass-117605604.jpg"
+    "picture": "https://images.unsplash.com/photo-1575721087345-4cd6f2a157ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
   },
   {
     "date_name": "Dinner Date In",
-    "description": "Order your favorite dishes for a delivery dinner date. No matter what your corona comfort zone is, this date can be tailored to you. If you are video only, order from the same restaurant or the same type of food to enjoy together. If you are socially distant, order the food and eat it at a nice outdoor area and sit distanced in the grass.",
+    "description": "Order your favorite dishes for a delivery dinner date. No matter what your corona comfort zone is, this date can be tailored to you. If you are on a virtual date, order from the same restaurant or the same type of food to enjoy together. If you are socially distant, order the food and eat it at a nice outdoor area and sit distanced in the grass.",
     "is_video": true,
     "is_socially_distant": true,
     "is_co_quarantined": true,
     "is_outside": false,
     "is_at_home": true,
-    "picture": "https://i0.wp.com/pointofsale.com/wp-content/uploads/2020/05/DOORDASH-LOGO-01.png?fit=2084%2C1336&ssl=1"
+    "picture": "https://images.unsplash.com/photo-1603073163308-9654c3fb70b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=968&q=80"
   },
   {
     "date_name": "Drive In Movie Date",
-    "description": "Drive in movies have become popular again! Grab some of your favorite movie snacks and blankets. Search online for drive in movies in your area and grab your date and go.",
+    "description": "Drive in movies have become popular again! Grab some of your favorite movie snacks and blankets. Search online for drive in movies in your area, hop in the car with your date and enjoy the show!",
     "is_video": false,
     "is_socially_distant": false,
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": false,
-    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP0vAyo0Bp_vS9RL4GAL9lc8QsWkxzemPQPw&usqp=CAU"
+    "picture": "https://images.unsplash.com/photo-1594808985790-98a065b97476?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=946&q=80"
   },
   {
     "date_name": "Wine Tasting",
@@ -37,7 +37,7 @@
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": false,
-    "picture": "https://rockwood-manor.com/wp-content/uploads/2015/01/vineyards.jpg"
+    "picture": "https://images.unsplash.com/photo-1598306442837-613a3def54ff?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1275&q=80"
   },
   {
     "date_name": "Walk Together",
@@ -47,27 +47,27 @@
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": true,
-    "picture": "https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/127183028_4175349672494811_1185683023844334989_n.jpg?_nc_cat=109&ccb=2&_nc_sid=8bfeb9&_nc_ohc=Y3H0bqxbIW4AX_GAExW&_nc_ht=scontent-sjc3-1.xx&oh=7a9c5e1d43a40738ae583889baf9b476&oe=5FEAE1A7"
+    "picture": "https://images.unsplash.com/photo-1445762467354-d6c921f33b14?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
   },
   {
     "date_name": "Dress up for a Night in",
-    "description": "Dress up for a fancy night in. We all have been wearing out our comfortable clothes, its time to break out the dresses and button-down shirts. Notice how nice the other person looks for you and themselves and take a few pictures together to remember this year by something other than masks.",
+    "description": "Dress up for a fancy night in. We all have been wearing out our comfortable clothes, its time to break out the dresses and button-down shirts. Notice how nice the other person looks for you and themselves and take a few pictures together to remember this year by something other than masks. If you can't see your date in person, you will both still look great over video!",
     "is_video": true,
     "is_socially_distant": false,
     "is_co_quarantined": true,
     "is_outside": false,
     "is_at_home": true,
-    "picture": "https://cdn.shopify.com/s/files/1/0314/2343/0700/files/closet.jpg"
+    "picture": "https://images.unsplash.com/photo-1557342893-e60fccd51648?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80"
   },
   {
     "date_name": "Sunset lookout",
-    "description": "Drive to a lookout together to watch the sunset. Plan ahead and don't miss it! If it's a cool evening, bring a thermos with hot chocolate and some blankets. Enjoy intentionally spending time together",
+    "description": "Drive to a lookout together (in the same or different cars) to watch the sunset. Plan ahead and don't miss it! If it's a cool evening, bring a thermos with hot cocoa and some blankets. Enjoy intentionally spending time together.",
     "is_video": false,
     "is_socially_distant": true,
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": false,
-    "picture": "https://i.redd.it/mlk8n766cax21.jpg"
+    "picture": "https://images.unsplash.com/photo-1473679408190-0693dd22fe6a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
   },
   {
     "date_name": "Dance Together",
@@ -77,27 +77,27 @@
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": true,
-    "picture": "https://media1.popsugar-assets.com/files/thumbor/7L1EIQ7LnBDWbCSgcLMre4F8D3Q/fit-in/2048xorig/filters:format_auto-!!-:strip_icc-!!-/2012/07/29/5/192/1922794/a9390f8935ccc51e_gkvfyj2pg0yccjux/i/Who-can-forget-climactic-dance-scene-film.jpg"
+    "picture": "https://images.unsplash.com/photo-1602026292436-496e46ee502f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80"
   },
   {
     "date_name": "Play on online game together",
-    "description": "There are lots of online games available and popular right now, play Among Us with other couples or Settlers of Catan online",
+    "description": "There are lots of online games available and popular right now, play Among Us with other couples or Settlers of Catan online.",
     "is_video": true,
     "is_socially_distant": true,
     "is_co_quarantined": true,
     "is_outside": false,
     "is_at_home": true,
-    "picture": "https://steamcdn-a.akamaihd.net/steam/apps/945360/header.jpg?t=1606236732"
+    "picture": "https://images.unsplash.com/photo-1571716846319-21f2bf095516?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
   },
   {
     "date_name": "Bake Together",
-    "description": "Find a recipe that you havent tried before and cook or bake together! You will have the added bonus of eating together after.",
+    "description": "Find a recipe that you haven't tried before and cook or bake together! You will have the added bonus of eating something delicious together after.",
     "is_video": true,
     "is_socially_distant": false,
     "is_co_quarantined": true,
     "is_outside": false,
     "is_at_home": true,
-    "picture": "https://images.food52.com/ZQhPTTH4r52v7Yz2VyYZmTooajg=/362x0/6da8b21b-87f6-4896-8417-dc9fe8b9cb3f--2019-0722_jk-adams_mommy-and-me-baking-set_1x1_rocky-luten_031.jpg"
+    "picture": "https://images.unsplash.com/photo-1576097449802-2aa05e59b212?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
   },
   {
     "date_name": "Binge TV Show together",
@@ -107,7 +107,7 @@
     "is_co_quarantined": true,
     "is_outside": false,
     "is_at_home": true,
-    "picture": "https://media.comicbook.com/2020/01/netflix-disney-plus-amazon-hulu-1205084-1280x0.jpeg"
+    "picture": "https://images.unsplash.com/photo-1560169897-fc0cdbdfa4d5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1652&q=80"
   },
   {
     "date_name": "Take quizzes together",
@@ -117,37 +117,37 @@
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": true,
-    "picture": "https://www.buzzfeed.com/static-assets/img/quizzes-banner.c30826c1a8c7e0acd0a3686470defb95.jpg"
+    "picture": "https://images.unsplash.com/photo-1518384401463-d3876163c195?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80"
   },
   {
     "date_name": "Plant something together",
-    "description": "This one take some time to see results but is worth the energy! Stop at a local store and pick up something to plant together or order online. Make an evening out of it and enjoy each other's company while planing. After the date take care of it daily and watch it grow! Enjoy having a growing memory from your date night. If you cant be in the same place, plant twin plants and keep the rest of the process the same!",
+    "description": "This one take some time to see results but is worth the energy! Stop at a local store and pick up something to plant together or order online. Make an evening out of it and enjoy each other's company while planing. After the date take care of it daily and watch it grow! Enjoy having a growing memory from your date night. If you cant be in the same place, plant twin plants and virtually keep the rest of the date the same!",
     "is_video": true,
     "is_socially_distant": true,
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": true,
-    "picture": "https://www.vegansociety.com/sites/default/files/uploads/blog/copyright%20free%20potting.jpeg"
+    "picture": "https://images.unsplash.com/photo-1597250388001-fc5a96b307eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80"
   },
   {
     "date_name": "Have coffee/tea together",
-    "description": "Have coffee or tea together during the day. We used to go to coffee shops together but times have changed. Grab your favorite mug and fill it with a warm drink to sip and talk with.",
+    "description": "Have coffee or tea together during the day. We used to go to coffee shops together but times have changed. Grab your favorite mug and fill it with a warm drink to sip and talk over. Enjoy your coffee/tea virtually, socially distant or in person!",
     "is_video": true,
     "is_socially_distant": true,
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": true,
-    "picture": "https://i0.wp.com/www.eatthis.com/wp-content/uploads/2020/07/coffee-tea.jpg?fit=1200%2C879&ssl=1"
+    "picture": "https://images.unsplash.com/photo-1548051072-b34898021f8b?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1650&q=80"
   },
   {
     "date_name": "Stop by a brewery",
-    "description": "Go to a nearby brewery with some outdoor seating. Enjoy being in public with the safety of being outside and distant from others",
+    "description": "Go to a nearby brewery with some outdoor seating. Enjoy being in public with the safety of being outside and distant from others.",
     "is_video": false,
     "is_socially_distant": true,
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": false,
-    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcTNaKcTkhc3Nh_OreHfLwf5OI5ZQ2xtlgrQ&usqp=CAU"
+    "picture": "https://images.unsplash.com/photo-1532686255137-d9d0b396c5f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
   },
   {
     "date_name": "Dine out on a Patio",
@@ -157,6 +157,6 @@
     "is_co_quarantined": true,
     "is_outside": true,
     "is_at_home": false,
-    "picture": "https://www.baltimoresun.com/resizer/BRx_PtgIWNCDFqkHrcmp2nmc1pU=/1200x0/top/www.trbimg.com/img-595a3b99/turbine/bs-fo-outdoor-dining-20170626"
+    "picture": "https://images.unsplash.com/photo-1571515476930-f59475a66a58?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
   }
 ]

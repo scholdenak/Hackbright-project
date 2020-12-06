@@ -1,15 +1,15 @@
 [
   {
-    "email": "user1@user1",
-    "password": "user1",
-    "fname": "User1",
-    "lname": "User1"
+    "email": "eleanor@thegoodplace.com",
+    "password": "good",
+    "fname": "Eleanor",
+    "lname": "Shellstrop"
   },
   {
-    "email": "user2@user2",
-    "password": "user2",
-    "fname": "User2",
-    "lname": "User2"
+    "email": "chidi@thegoodplace.com",
+    "password": "good",
+    "fname": "Chidi",
+    "lname": "Anagonye"
   },
   {
     "email": "user3@user3",
