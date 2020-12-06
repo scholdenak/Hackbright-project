@@ -17,7 +17,7 @@
   <div>
     <form action="/generate/name">
     {% for person in date_people %}
-      <input type="submit"  name="name" value={{person.name}}>
+      <input type="submit"  name="name" value={{person.name}}>{{person.relationship_type}}
       {% endfor %}
     </form>
   </div>

@@ -3,8 +3,9 @@
 {% block body %}
   <h1>Corona Safe Date Generator</h1>
 <h2>Welcome {{ session['current_user'] }} to your personalized date generator</h2>
-  <div>You can have romantic dates or friend dates.
-    We just want you to be able to see them and still feel as safe as possible.
+  <div>
+    <h2>You can have romantic dates or friend dates.</h2>
+    <h2>We just want you to be able to see them and still feel as safe as possible.</h2>
   </div>
   <div>
   
@@ -13,19 +14,19 @@
       <input type="text" name="relationship" placeholder="Relationship">
 
         
-      Where would you like your date to be?
+      <h3>Where would you like your date to be?</h3> 
 
         <select name="location">
-          <option value="is_outside">Outside only</option>
-          <option value="is_at_home">Home only</option>
-          <option value="both">Outside or Home</option>
+          <div><option value="is_outside">Outside only</option></div>
+          <div><option value="is_at_home">Home only</option></div>
+          <div><option value="both">Outside or Home</option></div>
         </select>
      
     </div>
   
     <div>
     
-        How close are you comfortable being to your date?
+        <h3>How close are you comfortable being to your date? (select one)</h3>
   
         <input type="radio" name="bubble" value="is_video">
         <label>I'm only comfortable with video dates for now.</label>
