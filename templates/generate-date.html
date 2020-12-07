@@ -6,7 +6,8 @@
 
 
 <h2>Welcome {{ session['current_user'] }} to your personalized date generator</h2> 
-  <div>
+<main class="screen-box"> 
+<div>
   <form action="/date-selection">    
       <h3>Where would you like your date to be?</h3>
     <div>
@@ -42,5 +43,5 @@
     </form>
 
   </div>
-
+</main> 
 {% endblock %}

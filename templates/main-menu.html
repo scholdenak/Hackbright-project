@@ -5,7 +5,7 @@
 {% block body %}
 <h1>Main Menu</h1>
 <h2>Welcome {{ session['current_user'] }}</h2> 
-
+<main class="screen-box">
 <h3>What would you like to do?</h3>
 <!-- <form>
   <input type='submit' value='Generate a date!'>
@@ -17,9 +17,15 @@
 </form> -->
 
 <ul>
-  <li><a href="/generate-date">Generate a Date Idea</a></li>
-  <li><a href="/dates-liked">View Your Liked Dates</a></li>
-  <li><a href="/date-people">Go To Presaved Settings</a></li>
+  <div>
+  <a  class="href" href="/generate-date">Generate a Date Idea</a>
+  </div>
+  <div>
+  <a class="href" href="/dates-liked">View Your Liked Dates</a>
+  <div>
+  <a class="href" href="/date-people">Go To Presaved Settings</a>
+</div>
+</div>
 </ul>
-
+</main>
 {% endblock %}

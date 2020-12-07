@@ -1,7 +1,4 @@
 
-#map {
-  height: 100%;
-}
 html, body {
   height: 100%;
   margin: 0;
@@ -55,10 +52,6 @@ h1 {
   text-align: center;
 }
 
-
-/* @import url('https://fonts.googleapis.com/css?family=Numans'); */
-
-
 body.login {
   background: white url("https://cdn.discordapp.com/attachments/760243464809218058/785347746751578172/rosepic2.jpg");
   background-size: 100%;
@@ -88,11 +81,16 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+min-height: 300px;
 margin-top: auto;
 margin-bottom: auto;
 width: 400px;
 background-color: rgba(0,0,0,0.5) !important;
+display: inline-block;
+}
+
+.card-columns {
+  align-content: center;
 }
 
 .card-header h3{
@@ -150,9 +148,18 @@ container.card-img-top {
   background-color: rgba(0,0,0,0.5) !important;
   }
 
+  
+
 .container-map {
   align-content: center;
   }
+
+.img-frame {
+  max-height: 200px;
+  overflow: hidden;
+  object-fit: contain;
+  background-position: center center;
+}
 
   .footer {
     /* position: fixed; */
@@ -166,4 +173,19 @@ container.card-img-top {
     margin-bottom: -50px;
   }
 
+  .href {
+    color: #CB2D6F;
+  }
+
+  main.screen-box {
+    background-color: rgba(0,0,0,0.7);
+    margin: 3%;
+    border: 3%;
+    padding:3%;
+    text-align: center;
   
+  }
+
+/* div {
+  padding: 3%;
+} */
