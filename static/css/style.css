@@ -133,3 +133,15 @@ color: white;
 .links a{
 margin-left: 4px;
 }
+
+.card-img-top {
+  height: 10em;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 10em;
+  background-color: rgba(0,0,0,0.5) !important;
+  }
+
+.container-map {
+  align-content: center;
+  }

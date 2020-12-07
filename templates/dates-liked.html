@@ -7,8 +7,14 @@
 <h2>Welcome {{ session['current_user'] }} to your liked dates!</h2>
 
 {% for liked_date in liked_dates %}
-{{ liked_date.idea.date_name }}
-<li>{{ liked_date.idea.description }}</li>
-{% endfor %}
 
+<div class="card container" style="width: 18rem;">
+  <img class="card-img-top" src="{{ liked_date.idea.picture }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ liked_date.idea.date_name }}</h5>
+    <p class="card-text">{{ liked_date.idea.description }}</p>
+  </div>
+</div>
+{% endfor %}
 {% endblock %}
+
