@@ -8,13 +8,18 @@
 
 {% for liked_date in liked_dates %}
 
-<div class="card container" style="width: 18rem;">
-  <img class="card-img-top" src="{{ liked_date.idea.picture }}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">{{ liked_date.idea.date_name }}</h5>
-    <p class="card-text">{{ liked_date.idea.description }}</p>
+
+<!-- <div class="card-deck"> -->
+<div class="card-columns">
+<div class="card container" style="width:500px">
+  <img class="card-img-top" src="{{ liked_date.idea.picture }}" alt="Card image">
+  <div class="card-img-overlay">
+    <h4 class="card-title">{{ liked_date.idea.date_name }}</h4>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary">See Date Description</a>
   </div>
 </div>
-{% endfor %}
-{% endblock %}
+</div>{% endfor %}
+<!-- </div> -->
 
+{% endblock %}

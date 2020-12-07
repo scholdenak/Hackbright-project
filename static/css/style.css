@@ -18,11 +18,16 @@ body {
   text-align: left;
   background-color: #0F292F;
 }
-/*
-button.btn {
+
+.btn {
   background: #14A098;
 }
- */
+
+.btn:hover{
+  color: black;
+  background-color: rgb(226, 145, 213);
+  }
+
  nav.navbar-custom {
   background-color: #14A098;
   opacity: .75;
@@ -51,7 +56,7 @@ h1 {
 }
 
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
+/* @import url('https://fonts.googleapis.com/css?family=Numans'); */
 
 
 body.login {
@@ -79,6 +84,7 @@ body {
 .container{
 height: 100%;
 align-content: center;
+
 }
 
 .card{
@@ -137,11 +143,10 @@ color: white;
 margin-left: 4px;
 }
 
-.card-img-top {
-  height: 10em;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 10em;
+container.card-img-top {
+  /* margin-top: auto;
+  margin-bottom: auto; */
+
   background-color: rgba(0,0,0,0.5) !important;
   }
 
@@ -150,7 +155,7 @@ margin-left: 4px;
   }
 
   .footer {
-    position: fixed;
+    /* position: fixed; */
     left: 0;
     bottom: 0;
     width: 100%;
@@ -158,6 +163,7 @@ margin-left: 4px;
     opacity: .45;
     color: white;
     text-align: center;
+    margin-bottom: -50px;
   }
 
   
