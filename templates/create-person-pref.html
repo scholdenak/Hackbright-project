@@ -17,9 +17,9 @@
       <h3>Where would you like your date to be?</h3> 
 
         <select name="location">
-          <div><option value="is_outside">Outside only</option></div>
-          <div><option value="is_at_home">Home only</option></div>
-          <div><option value="both">Outside or Home</option></div>
+          <option value="is_outside">Outside only</option>
+          <option value="is_at_home">Home only</option>
+          <option value="both">Outside or Home</option>
         </select>
      
     </div>
@@ -27,18 +27,21 @@
     <div>
     
         <h3>How close are you comfortable being to your date? (select one)</h3>
-  
+      
+      <div>
         <input type="radio" name="bubble" value="is_video">
         <label>I'm only comfortable with video dates for now.</label>
-  
+      </div>
+      <div>
         <input type="radio" name="bubble" value="is_socially_distant">
         <label>I would love to see them in person but we should stay 6ft apart.
         </label>
-  
+      </div>
+      <div>
         <input type="radio" name="bubble" value="is_co_quarantined">
         <label>We are already co-quarantined or they are part of my corona family
           so we dont have to distance.</label>
-      
+      </div>
 
   
     <input type="submit" value="Save Preferences!">

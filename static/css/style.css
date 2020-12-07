@@ -1,12 +1,12 @@
 
-  #map {
-    height: 100%;
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+#map {
+  height: 100%;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   margin: 0;
@@ -36,16 +36,18 @@ button.btn {
 a.nav-link {
   color: #CCCCCC;
 }
-/*
+
 h1 {
   font-family: 'Playfair Display';
   font-weight: 900;
+
   font-style: italic;
   margin-bottom: 15px;
   font-size: 68px;
-  color: #CB2D6F;
+  color: #330e1d;
   text-align: center;
-} */
+}
+
 
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
@@ -61,6 +63,14 @@ body.login {
 
 .login-title {
   text-align: center;
+}
+
+body {
+  background: white url("https://images.unsplash.com/photo-1517867065801-e20f409696b0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80");
+  background-size: cover;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .container{
