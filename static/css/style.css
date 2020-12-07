@@ -25,6 +25,8 @@ button.btn {
  */
  nav.navbar-custom {
   background-color: #14A098;
+  opacity: .75;
+  width: 100%;
 } 
  
 .navbar-custom .navbar-brand, 
@@ -71,6 +73,7 @@ body {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .container{
@@ -145,3 +148,16 @@ margin-left: 4px;
 .container-map {
   align-content: center;
   }
+
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #14A098;
+    opacity: .45;
+    color: white;
+    text-align: center;
+  }
+
+  
