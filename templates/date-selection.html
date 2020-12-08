@@ -4,21 +4,23 @@
 {% block title %}Date Selection{% endblock %}
 {% block body %}
 
-<h2> {{ session['current_user'] }}, 
-  I picked out a wonderful date for you!</h2> 
-  
-{{ date_choice.date_name }}
-<br>
+<!-- <h2> {{ session['current_user'] }}, 
+  I picked out a wonderful date for you!</h2>  -->
+<main class="screen-box">  
+<h3>{{ date_choice.date_name }}</h3>
 {{ date_choice.description}}
-<br>
-<img class="large" id=dateImage src = "{{ date_choice.picture }}">
+<br></main>
+<centered>
+  <img class="large" id=dateImage src = "{{ date_choice.picture }}">
 
 
 <form action="/save-liked-date", method="post"> 
-  <button name="like" type="submit" value='{{ date_choice.idea_id }}'>Like This Date!
+  <button class="button" name="like" type="submit" value='{{ date_choice.idea_id }}'>Like This Date!
   </button>
-</form>
-<!-- 
+</form>  
+</centered>
+
+<!--
 generate a different date button
 <form action="/generate-date"> 
 <input type="submit" value="Generate a Different Date!">
