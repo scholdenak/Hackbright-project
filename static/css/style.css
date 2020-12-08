@@ -46,7 +46,10 @@ h1 {
   font-weight: 900;
 
   font-style: italic;
+  margin-top: 5px;
   margin-bottom: 15px;
+  margin-left: 20%;
+  margin-right: 20%;
   font-size: 68px;
   color: #330e1d;
   text-align: center;
@@ -178,12 +181,30 @@ container.card-img-top {
   }
 
   main.screen-box {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     margin: 3%;
     border: 3%;
     padding:3%;
     text-align: center;
+  }
+
+  main.map-box {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin-left: 20em;
+    margin-right: 20em;
+    border: 3%;
+    padding:3%;
+    text-align: center;
+  }
   
+  h1 {
+    background-color:  #14a09980;
+    
+  }
+
+  img.large {
+    max-width: 70%;
+    max-height: 50%;
   }
 
 /* div {
