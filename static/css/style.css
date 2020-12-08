@@ -38,18 +38,17 @@ body {
 } 
 
 a.nav-link {
-  color: #CCCCCC;
+  color: white;
 }
 
 h1 {
   font-family: 'Playfair Display';
   font-weight: 900;
-
   font-style: italic;
   margin-top: 5px;
   margin-bottom: 15px;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 30%;
+  margin-right: 30%;
   font-size: 68px;
   color: #330e1d;
   text-align: center;
@@ -147,11 +146,8 @@ margin-left: 4px;
 container.card-img-top {
   /* margin-top: auto;
   margin-bottom: auto; */
-
   background-color: rgba(0,0,0,0.5) !important;
   }
-
-  
 
 .container-map {
   align-content: center;
@@ -182,7 +178,10 @@ container.card-img-top {
 
   main.screen-box {
     background-color: rgba(0, 0, 0, 0.7);
-    margin: 3%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 3%;
+    margin-right: 3%;
     border: 3%;
     padding:3%;
     text-align: center;
@@ -196,17 +195,54 @@ container.card-img-top {
     padding:3%;
     text-align: center;
   }
-  
+
   h1 {
-    background-color:  #14a09980;
-    
+    background-color:  #14a09980;  
   }
 
   img.large {
     max-width: 70%;
-    max-height: 50%;
+    max-height: 35%;
   }
 
-/* div {
-  padding: 3%;
-} */
+.button{
+  color: black;
+  background-color: #14A098;
+  width: 100px;
+}
+    
+.button:hover{
+  color: black;
+  background-color: rgb(226, 145, 213);
+}
+
+.person {
+  margin-top: 10px;
+  margin-left: 5em;
+  margin-right: 5em;
+  color:white;
+}
+
+h4{
+  color: white;
+}
+
+h2{
+  margin-top: 5px;
+  margin-bottom: 0px;
+  margin-left: 2em;
+}
+
+h3{
+  color: white;
+}
+
+select, input{
+  color: black;
+  background-color: #14A098;
+}
+    
+select:hover,input:hover{
+  color: black;
+  background-color: rgb(226, 145, 213);
+}

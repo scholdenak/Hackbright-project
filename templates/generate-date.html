@@ -5,16 +5,17 @@
 {% block body %}
 
 
-<h2>Welcome {{ session['current_user'] }} to your personalized date generator</h2> 
+<h2>Generate Date</h2>
+ 
 <main class="screen-box"> 
 <div>
   <form action="/date-selection">    
       <h3>Where would you like your date to be?</h3>
     <div>
-      <select name="location">
-        <option value="is_outside">Outside only</option>
-        <option value="is_at_home">Home only</option>
-        <option value="both">Outside or Home</option>
+      <select class="button" name="location">
+        <option value="is_outside">Outside</option>
+        <option value="is_at_home">Home</option>
+        <option value="both">Either</option>
       </select>
     </div>
   </div>

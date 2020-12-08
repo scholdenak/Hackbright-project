@@ -1,24 +1,30 @@
 {% extends 'base.html' %}
 {% block title %}Corona Safe Date {% endblock %}
 {% block body %}
-  <h1>Corona Safe Date Generator</h1>
+  <h2>Saved Preferences</h2>
   <main class="screen-box">
-  <div>You can have romantic dates or friend dates.
+  <div>
+    <h4>You can have romantic dates or friend dates.
     We just want you to be able to see them and still feel as safe as possible.
+    </h4>
   </div>
-  <div>Click a person to generate a date with their preferences
-    or create a new person below!
+  <div>
+    <h5>Create a new person!</h5>
   
     <form action="/create-person-pref">
-      <input type="submit" name="new-person" value="New Relationship!">
+      <input class="button" type="submit" name="new-person" value="New!">
       
     </form>
   </div>
   <div>
     <form action="/generate/name">
+    <h5>Click a person to generate a date with them!</h5>
+    
     {% for person in date_people %}
-      <input type="submit"  name="name" value={{person.name}}>{{person.relationship_type}}
-      {% endfor %}
+    <person class="person">
+      <input class="button" type="submit"  name="name" value={{person.name}}>{{person.relationship_type}}
+    </person> 
+    {% endfor %}
     </form>
   </div>
 </main>

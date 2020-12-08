@@ -1,10 +1,12 @@
 
 
 {% extends 'base.html' %}
-{% block title %}Dates Liked{% endblock %}
+{% block title %}Date Selection{% endblock %}
 {% block body %}
 
-<h2> {{ session['current_user'] }}, I picked out a wonderful date for you!</h2> 
+<h2> {{ session['current_user'] }}, 
+  I picked out a wonderful date for you!</h2> 
+  
 {{ date_choice.date_name }}
 <br>
 {{ date_choice.description}}
@@ -13,23 +15,22 @@
 
 
 <form action="/save-liked-date", method="post"> 
-  Do you love this date idea? Like it to save it to your profile for later!
   <button name="like" type="submit" value='{{ date_choice.idea_id }}'>Like This Date!
   </button>
 </form>
-
-<!-- generate a different date button-->
+<!-- 
+generate a different date button
 <form action="/generate-date"> 
 <input type="submit" value="Generate a Different Date!">
 </form>
 
 <!-- like date to view later -->
-<form action="/dates-liked"> 
+<!-- <form action="/dates-liked"> 
 <input type="submit" value="View Your Liked Dates!">
-</form>
+</form> -->
 
 <!-- back to main menu -->
-<form action="/main-menu"> 
+<!-- <form action="/main-menu"> 
   <input type="submit" value="Main Menu!">
-  </form>
+  </form>  -->
 {% endblock %}
