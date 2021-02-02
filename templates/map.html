@@ -1,11 +1,7 @@
 {% extends 'base.html' %}
 {% block head %}
 {% block title %}{% endblock %}
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYRY36wqk-usmwctc5rpfSYbe88wZVIF0&callback=initMap&libraries=&v=weekly"
-  defer
-></script>
+<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
 <style>
   #map {
     display: block;
@@ -28,7 +24,7 @@
 <div class="container-map"><h3>Verified Outdoor Date Locations</h3>
 <div><h5>Mouse over pins for location names</h5>
 </div>
-<input id="pac-input">
+<input id="search-input">
 <div id="map">
 </div>
 </div>
