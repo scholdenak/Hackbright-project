@@ -54,7 +54,7 @@ def start_date_generator():
 
     return render_template('generate-date.html')
 
-# *****************************************************
+
 @app.route('/date-selection')
 def generate_preferred_date():
     """uses form selections to query dates"""
@@ -109,30 +109,6 @@ def generate_preferred_date():
     date_choice = (random.choice(date_options))
 
     return render_template ('date-selection.html', date_choice=date_choice)
-
-
-
-
-# # ******************************************
-# #     kwargs = {'hometown': 'New York', 'university' : 'USC'}
-# # User.query.filter_by(**kwargs)
-# # # This above line is equivalent to saying...
-# # User.query.filter_by(hometown='New York', university='USC')
-
-# TODO refactor into server.py line 80
-#     if location == 'both':
-# #   date options = query DateIdeas WHERE ((bubble variable) = True, 
-# #                                 home is True or outside is True) all
-#         date_options = q.filter_by((bubble2) == True, 
-#                                 (DateIdea.location == True)).all()
-# # else:
-#     else:
-# #   date options = query DateIdeas WHERE ((bubble variable) = True,
-# #                                 (location variable) is True) all
-#         date_options = q.filter(DateIdea.bubble == True, 
-#                                 (DateIdea.location == True)).all()
-
-#     return date_options
 
 
 @app.route('/dates-liked')
@@ -192,15 +168,12 @@ def create_new_person():
     name = request.form['name']
     relationship_type = request.form['relationship']
 
-
     date_person = create_date_person(user_id, name, relationship_type)
     print(f'\n\n******{date_person}***{date_person.date_person_id}****')
-
 
     bubble_data = request.form['bubble']
     location_data = request.form['location']
     date_person_id = get_date_person_id(user_id, name)
-
 
     is_video = bubble_data == 'is_video'
     is_socially_distant = bubble_data == 'is_socially_distant'
@@ -220,7 +193,6 @@ def create_new_person():
                             is_co_quarantined=is_co_quarantined, is_outside=is_outside,
                             is_at_home=is_at_home)
     
-
     return redirect ('/date-people')
 
 
@@ -231,7 +203,7 @@ def generate_date_from_name():
 
     user_id = session['user_id']
     name = request.args.get('name')
-    # bubble_data = request.args.get('bubble')
+
     date_person_id = get_date_person_id(user_id, name)
 
     date_options = generate_from_person_id(date_person_id)
@@ -246,10 +218,6 @@ def render_map():
 
     return render_template('map.html')
 
-
-# @app.route('/map.json')
-# def search_info():
-#     """uses search info from map.html to generate json"""
 
 
 if __name__ == '__main__':
