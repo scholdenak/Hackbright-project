@@ -1,30 +1,20 @@
-// let map;
-// let service;
-// let infowindow;
-
-// const keyWordForm = document.querySelector("#test");
-
-// keyWordForm.addEventListener('submit', (evt) => {
-//   const keyWordInput = document.querySelector('input[id=keyword]')
-// })
-
+// Create map with location centered around specific location
 function initAutocomplete() {
   const map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 32.2583105, lng: -110.9144216 },
     zoom: 13,
     mapTypeId: "roadmap",
   });
-  // Create the search box and link it to the UI element.
+  // Create the search box and link to user input element.
   const input = document.getElementById("pac-input");
   const searchBox = new google.maps.places.SearchBox(input);
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  // Bias the SearchBox results towards current map's viewport.
+  // Search within map view.
   map.addListener("bounds_changed", () => {
     searchBox.setBounds(map.getBounds());
   });
   let markers = [];
-  // Listen for the event fired when the user selects a prediction and retrieve
-  // more details for that place.
+  // Add event listener to search box to retrieve new user input
   searchBox.addListener("places_changed", () => {
     const places = searchBox.getPlaces();
 
@@ -61,7 +51,7 @@ function initAutocomplete() {
       );
 
       if (place.geometry.viewport) {
-        // Only geocodes have viewport.
+        // place markers within map viewport
         bounds.union(place.geometry.viewport);
       } else {
         bounds.extend(place.geometry.location);
